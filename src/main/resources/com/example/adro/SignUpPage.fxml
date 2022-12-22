@@ -6,131 +6,149 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<FlowPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="468.0" prefWidth="672.0" style="-fx-background-color: #9dbebbc5;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<FlowPane columnHalignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="568.0" prefWidth="672.0" style="-fx-background-color: #9dbebbc5;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.adro.SignUpPageController">
    <children>
-      <Label prefHeight="41.0" prefWidth="135.0" text="Register">
-         <FlowPane.margin>
-            <Insets bottom="10.0" left="290.0" right="200.0" top="20.0" />
-         </FlowPane.margin>
-         <font>
-            <Font name="Times New Roman" size="25.0" />
-         </font>
-      </Label>
-      <Label text="Full name">
-         <font>
-            <Font name="Poor Richard" size="20.0" />
-         </font>
-         <FlowPane.margin>
-            <Insets bottom="5.0" left="90.0" />
-         </FlowPane.margin>
-      </Label>
-      <TextField promptText="Enter your name">
-         <opaqueInsets>
-            <Insets />
-         </opaqueInsets>
-         <FlowPane.margin>
-            <Insets left="200.0" />
-         </FlowPane.margin>
-      </TextField>
-      <Label text="Date of birth">
-         <FlowPane.margin>
-            <Insets bottom="5.0" left="90.0" />
-         </FlowPane.margin>
-         <font>
-            <Font name="Poor Richard" size="20.0" />
-         </font>
-      </Label>
-      <TextField promptText="dd-mm-yyyy">
-         <FlowPane.margin>
-            <Insets left="178.0" />
-         </FlowPane.margin>
-      </TextField>
-      <Label text="E-mail address">
-         <font>
-            <Font name="Poor Richard" size="20.0" />
-         </font>
-         <FlowPane.margin>
-            <Insets bottom="5.0" left="90.0" />
-         </FlowPane.margin>
-      </Label>
-      <TextField promptText="E-mail address">
-         <FlowPane.margin>
-            <Insets left="162.0" />
-         </FlowPane.margin>
-      </TextField>
-      <Label text="Phone number">
-         <font>
-            <Font name="Poor Richard" size="20.0" />
-         </font>
-         <FlowPane.margin>
-            <Insets bottom="5.0" left="90.0" />
-         </FlowPane.margin>
-      </Label>
-      <TextField promptText="+998XX XXX XX XX">
-         <FlowPane.margin>
-            <Insets left="165.0" />
-         </FlowPane.margin>
-      </TextField>
-      <Label text="Username">
-         <font>
-            <Font name="Poor Richard" size="20.0" />
-         </font>
-         <FlowPane.margin>
-            <Insets bottom="5.0" left="90.0" />
-         </FlowPane.margin>
-      </Label>
-      <TextField promptText="Username">
-         <FlowPane.margin>
-            <Insets left="198.0" />
-         </FlowPane.margin>
-      </TextField>
-      <Label text="Password">
-         <font>
-            <Font name="Poor Richard" size="20.0" />
-         </font>
-         <FlowPane.margin>
-            <Insets bottom="5.0" left="90.0" />
-         </FlowPane.margin>
-      </Label>
-      <TextField promptText="Password">
-         <FlowPane.margin>
-            <Insets left="205.0" />
-         </FlowPane.margin>
-      </TextField>
-      <Label text="Confirm Password">
-         <font>
-            <Font name="Poor Richard" size="20.0" />
-         </font>
-         <FlowPane.margin>
-            <Insets bottom="5.0" left="90.0" />
-         </FlowPane.margin>
-      </Label>
-      <TextField promptText="Password">
-         <opaqueInsets>
-            <Insets />
-         </opaqueInsets>
-         <FlowPane.margin>
-            <Insets left="140.0" />
-         </FlowPane.margin>
-      </TextField>
-      <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@adro-removebg-preview.png" />
-         </image>
-         <FlowPane.margin>
-            <Insets left="240.0" />
-         </FlowPane.margin>
-      </ImageView>
-      <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="142.0" style="-fx-background-color: #f4e9bb;" text="Submit!">
-         <font>
-            <Font name="SansSerif Bold" size="14.0" />
-         </font>
-         <FlowPane.margin>
-            <Insets left="245.0" />
-         </FlowPane.margin>
-      </Button>
+      <BorderPane prefHeight="511.0" prefWidth="665.0">
+         <top>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="106.0" prefWidth="135.0" text="Register" BorderPane.alignment="CENTER">
+               <font>
+                  <Font name="Times New Roman" size="25.0" />
+               </font>
+            </Label>
+         </top>
+         <center>
+            <HBox alignment="CENTER" prefHeight="245.0" prefWidth="665.0" BorderPane.alignment="CENTER">
+               <children>
+                  <VBox prefHeight="274.0" prefWidth="159.0">
+                     <children>
+                        <Label text="Full name">
+                           <font>
+                              <Font name="Poor Richard" size="20.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="10.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label alignment="CENTER" contentDisplay="CENTER" text="Date of birth">
+                           <font>
+                              <Font name="Poor Richard" size="20.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="10.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label text="E-mail address">
+                           <font>
+                              <Font name="Poor Richard" size="20.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="10.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label text="Phone number">
+                           <font>
+                              <Font name="Poor Richard" size="20.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="10.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label text="Username">
+                           <font>
+                              <Font name="Poor Richard" size="20.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="10.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label text="Password">
+                           <font>
+                              <Font name="Poor Richard" size="20.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="10.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label text="Confirm Password">
+                           <font>
+                              <Font name="Poor Richard" size="20.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="10.0" />
+                           </VBox.margin>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="274.0" prefWidth="164.0">
+                     <children>
+                        <TextField promptText="Enter your name">
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                           <VBox.margin>
+                              <Insets bottom="10.0" />
+                           </VBox.margin>
+                        </TextField>
+                        <TextField promptText="dd-mm-yyyy">
+                           <VBox.margin>
+                              <Insets bottom="10.0" />
+                           </VBox.margin>
+                        </TextField>
+                        <TextField promptText="E-mail address">
+                           <VBox.margin>
+                              <Insets bottom="10.0" />
+                           </VBox.margin>
+                        </TextField>
+                        <TextField promptText="+998XX XXX XX XX">
+                           <VBox.margin>
+                              <Insets bottom="10.0" />
+                           </VBox.margin>
+                        </TextField>
+                        <TextField promptText="Username">
+                           <VBox.margin>
+                              <Insets bottom="10.0" />
+                           </VBox.margin>
+                        </TextField>
+                        <TextField promptText="Password">
+                           <VBox.margin>
+                              <Insets bottom="10.0" />
+                           </VBox.margin>
+                        </TextField>
+                        <TextField promptText="Password">
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                           <VBox.margin>
+                              <Insets bottom="10.0" />
+                           </VBox.margin>
+                        </TextField>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </center>
+         <bottom>
+            <VBox alignment="CENTER" prefHeight="143.0" prefWidth="665.0" BorderPane.alignment="CENTER">
+               <children>
+                  <ImageView fitHeight="167.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../java/pictures/adro-removebg-preview.png" />
+                     </image>
+                  </ImageView>
+                  <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="142.0" style="-fx-background-color: #f4e9bb;" text="Submit!">
+                     <font>
+                        <Font name="SansSerif Bold" size="14.0" />
+                     </font>
+                  </Button>
+               </children>
+            </VBox>
+         </bottom>
+      </BorderPane>
    </children>
 </FlowPane>
