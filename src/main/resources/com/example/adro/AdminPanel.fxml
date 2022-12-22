@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="644.0" prefWidth="1529.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.adro.HelloController">
+    <children>
+        <BorderPane layoutX="175.0" layoutY="6.0" prefHeight="394.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="6.0">
+            <top>
+                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                    <children>
+                        <Label fx:id="welcomeText" alignment="CENTER" contentDisplay="CENTER" prefHeight="56.0" prefWidth="207.0" text="Admin Panel" textFill="#468189">
+                            <font>
+                                <Font name="System Bold" size="27.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </HBox>
+            </top>
+            <center>
+                <TableView fx:id="table" prefHeight="538.0" prefWidth="1110.0" BorderPane.alignment="CENTER">
+                    <columns>
+                        <TableColumn fx:id="ID" prefWidth="42.0" style="-fx-font-size: 15px;" text="ID" />
+                        <TableColumn fx:id="MovieTitle" prefWidth="146.0" style="-fx-font-size: 15px;" text="Movie Title" />
+                        <TableColumn prefWidth="115.20001220703125" style="-fx-font-size: 15px;" text="Description" />
+                        <TableColumn prefWidth="107.19998168945312" style="-fx-font-size: 15px;" text="Price" />
+                        <TableColumn fx:id="NumberOfTickets" prefWidth="74.39996337890625" style="-fx-font-size: 15px;" text="Tickets" />
+                        <TableColumn prefWidth="115.20001220703125" style="-fx-font-size: 15px;" text="Genre" />
+                    </columns>
+                </TableView>
+            </center>
+            <left>
+                <AnchorPane prefHeight="538.0" prefWidth="425.0" BorderPane.alignment="CENTER">
+                    <children>
+                        <VBox alignment="TOP_CENTER" layoutX="97.0" layoutY="34.0" prefHeight="458.0" prefWidth="230.0">
+                            <children>
+                                <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="27.0" prefWidth="124.0" text="Movie Title">
+                                    <VBox.margin>
+                                        <Insets />
+                                    </VBox.margin>
+                                    <font>
+                                        <Font size="18.0" />
+                                    </font>
+                                </Label>
+                                <TextField fx:id="movieTitle" prefHeight="26.0" prefWidth="272.0" promptText="Movie Title..." />
+                                <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="27.0" prefWidth="124.0" text="Description">
+                                    <font>
+                                        <Font size="18.0" />
+                                    </font>
+                                </Label>
+                                <TextArea fx:id="movieDescription" prefHeight="60.0" prefWidth="230.0" promptText="Description..." />
+                                <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="27.0" prefWidth="124.0" text="Genre">
+                                    <font>
+                                        <Font size="18.0" />
+                                    </font>
+                                </Label>
+                                <ChoiceBox fx:id="movieGenre" prefHeight="26.0" prefWidth="221.0" />
+                                <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="27.0" prefWidth="124.0" text="Language">
+                                    <font>
+                                        <Font size="18.0" />
+                                    </font>
+                                </Label>
+                                <ChoiceBox fx:id="movieLanguage" prefHeight="26.0" prefWidth="221.0" />
+                                <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="27.0" prefWidth="124.0" text="Duration">
+                                    <font>
+                                        <Font size="18.0" />
+                                    </font>
+                                </Label>
+                                <TextField prefHeight="26.0" prefWidth="272.0" promptText="Movie Title..." />
+                                <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="27.0" prefWidth="124.0" text="Date">
+                                    <font>
+                                        <Font size="18.0" />
+                                    </font>
+                                </Label>
+                                <DatePicker fx:id="movieDate" prefHeight="26.0" prefWidth="228.0" />
+                            </children>
+                        </VBox>
+                    </children>
+                </AnchorPane>
+            </left>
+        </BorderPane>
+    </children>
+</AnchorPane>
