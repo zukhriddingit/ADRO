@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.text.Font?>
 
-<FlowPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="468.0" prefWidth="672.0" style="-fx-background-color: #9dbebbc5;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<FlowPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="468.0" prefWidth="672.0" style="-fx-background-color: #9dbebbc5;" fx:controller="com.example.adro.SignUpPageController" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Label prefHeight="41.0" prefWidth="135.0" text="Register">
          <FlowPane.margin>
@@ -118,7 +118,7 @@
       </TextField>
       <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@adro-removebg-preview.png" />
+            <Image url="@../../../../java/pictures/adro-removebg-preview.png" />
          </image>
          <FlowPane.margin>
             <Insets left="240.0" />
