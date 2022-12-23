@@ -41,11 +41,9 @@ public class AdminPanelController {
     @FXML
     private Label welcomeText;
 
-
     public ChoiceBox<?> getMovieGenre() {
         movieGenre.getItems().add("Action");
         movieGenre.getItems().add("Thriller");
         return movieGenre;
     }
-
 }
