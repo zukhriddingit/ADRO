@@ -21,6 +21,13 @@
             <version>19-ea+7</version>
         </dependency>
         <dependency>
+            <groupId></groupId>
+            <artifactId>
+
+            </artifactId>
+
+        </dependency>
+        <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-fxml</artifactId>
             <version>19-ea+7</version>

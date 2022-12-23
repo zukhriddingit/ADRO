@@ -2,6 +2,7 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
@@ -23,7 +24,7 @@
             </Label>
          </top>
          <center>
-            <HBox alignment="CENTER" prefHeight="245.0" prefWidth="665.0" BorderPane.alignment="CENTER">
+            <HBox fx:id="date" alignment="CENTER" prefHeight="245.0" prefWidth="665.0" BorderPane.alignment="CENTER">
                <children>
                   <VBox prefHeight="274.0" prefWidth="159.0">
                      <children>
@@ -87,7 +88,7 @@
                   </VBox>
                   <VBox prefHeight="274.0" prefWidth="164.0">
                      <children>
-                        <TextField promptText="Enter your name">
+                        <TextField fx:id="fullname" promptText="Enter your name">
                            <opaqueInsets>
                               <Insets />
                            </opaqueInsets>
@@ -95,32 +96,32 @@
                               <Insets bottom="10.0" />
                            </VBox.margin>
                         </TextField>
-                        <TextField promptText="dd-mm-yyyy">
+                        <DatePicker prefHeight="19.0" prefWidth="164.0">
+                           <VBox.margin>
+                              <Insets bottom="10.0" />
+                           </VBox.margin>
+                        </DatePicker>
+                        <TextField fx:id="email" prefHeight="15.0" prefWidth="164.0" promptText="E-mail address">
                            <VBox.margin>
                               <Insets bottom="10.0" />
                            </VBox.margin>
                         </TextField>
-                        <TextField promptText="E-mail address">
+                        <TextField fx:id="phoneNum" promptText="+998XX XXX XX XX">
                            <VBox.margin>
                               <Insets bottom="10.0" />
                            </VBox.margin>
                         </TextField>
-                        <TextField promptText="+998XX XXX XX XX">
+                        <TextField fx:id="userName" promptText="Username">
                            <VBox.margin>
                               <Insets bottom="10.0" />
                            </VBox.margin>
                         </TextField>
-                        <TextField promptText="Username">
+                        <TextField fx:id="password" promptText="Password">
                            <VBox.margin>
                               <Insets bottom="10.0" />
                            </VBox.margin>
                         </TextField>
-                        <TextField promptText="Password">
-                           <VBox.margin>
-                              <Insets bottom="10.0" />
-                           </VBox.margin>
-                        </TextField>
-                        <TextField promptText="Password">
+                        <TextField fx:id="ConfirmPassword" promptText="Password">
                            <opaqueInsets>
                               <Insets />
                            </opaqueInsets>
