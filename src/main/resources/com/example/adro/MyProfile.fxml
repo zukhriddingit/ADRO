@@ -28,7 +28,7 @@
                             <children>
                                 <ImageView fitHeight="433.0" fitWidth="567.0" pickOnBounds="true" preserveRatio="true">
                                     <image>
-                                        <Image url="src/main/java/pictures/bubfilo.jpg" />
+                                        <Image url="@../../../../java/pictures/bubfilo.jpg"/>
                                     </image>
                                     <VBox.margin>
                                         <Insets left="150.0" />
