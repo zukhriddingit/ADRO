@@ -13,13 +13,13 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<FlowPane columnHalignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="568.0" prefWidth="672.0" style="-fx-background-color: #9dbebbc5;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.adro.SignUpPageController">
+<FlowPane columnHalignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="568.0" prefWidth="672.0" style="-fx-background-color: #cddbc4;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.adro.SignUpPageController">
    <children>
       <BorderPane prefHeight="511.0" prefWidth="665.0">
          <top>
-            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="106.0" prefWidth="135.0" text="Register" BorderPane.alignment="CENTER">
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="106.0" prefWidth="253.0" text="Register" textFill="#945233" BorderPane.alignment="CENTER">
                <font>
-                  <Font name="Times New Roman" size="25.0" />
+                  <Font name="Times New Roman" size="44.0" />
                </font>
             </Label>
          </top>
@@ -142,7 +142,7 @@
                         <Image url="@../../../../java/pictures/adro-removebg-preview.png" />
                      </image>
                   </ImageView>
-                  <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="142.0" style="-fx-background-color: #f4e9bb;" text="Submit!">
+                  <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="142.0" style="-fx-background-color: #ebb074;" text="Submit!">
                      <font>
                         <Font name="SansSerif Bold" size="14.0" />
                      </font>
