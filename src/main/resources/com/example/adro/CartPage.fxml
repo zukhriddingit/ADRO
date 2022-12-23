@@ -17,7 +17,7 @@
                 <Button layoutX="603.0" layoutY="151.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="101.0" style="-fx-background-color: #00d4ff; -fx-border-radius: 50; -fx-line-spacing: 7; -fx-border-color: white; -fx-background-radius: 50; -fx-font-size: 12; -fx-border-style: dotted;" text="Pay via Payme" />
                 <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="181.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
                     <image>
-                        <Image url="@../../../../java/pictures/remove2-removebg-preview.png" />
+                        <Image url="@../../../../java/pictures/remove-removebg-preview.png" />
                     </image>
                 </ImageView>
                 <ImageView fitHeight="149.0" fitWidth="171.0" layoutX="579.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true" style="-fx-opacity: 1;">
