@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+
+<BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.adro.CartPageController">
+    <bottom>
+        <AnchorPane prefHeight="229.0" prefWidth="900.0" style="-fx-background-color: #c4ab50;" BorderPane.alignment="CENTER">
+            <children>
+                <Button layoutX="199.0" layoutY="151.0" mnemonicParsing="false" onAction="#onHelloButtonClick" prefHeight="31.0" prefWidth="114.0" style="-fx-border-radius: 50; -fx-background-color: #00d4ff; -fx-line-spacing: 7; -fx-border-color: white; -fx-background-radius: 50; -fx-font-size: 12; -fx-border-style: dotted;" text="Pay via Click" />
+                <Button layoutX="603.0" layoutY="151.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="101.0" style="-fx-background-color: #00d4ff; -fx-border-radius: 50; -fx-line-spacing: 7; -fx-border-color: white; -fx-background-radius: 50; -fx-font-size: 12; -fx-border-style: dotted;" text="Pay via Payme" />
+                <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="181.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../../../java/pictures/remove2-removebg-preview.png" />
+                    </image>
+                </ImageView>
+                <ImageView fitHeight="149.0" fitWidth="171.0" layoutX="579.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true" style="-fx-opacity: 1;">
+                    <image>
+                        <Image url="@../../../../java/pictures/payme.png" />
+                    </image>
+                </ImageView>
+            </children>
+        </AnchorPane>
+    </bottom>
+    <top>
+        <FlowPane fx:id="flowPane" orientation="HORIZONTAL" prefHeight="0.0" prefWidth="900.0" BorderPane.alignment="CENTER">
+            <children>
+                <HBox fx:id="hbox" prefHeight="80.0" prefWidth="900.0">
+                    <children>
+                        <Label prefHeight="18.0" prefWidth="66.0" text="Number" />
+                        <Label prefHeight="18.0" prefWidth="81.0" text="Movie ID" />
+                        <Label prefHeight="18.0" prefWidth="143.0" text="Movie  Name" />
+                        <Label prefHeight="18.0" prefWidth="162.0" text="Movie Description" />
+                        <Label prefHeight="18.0" prefWidth="132.0" text="Movie Language" />
+                        <Label prefHeight="18.0" prefWidth="162.0" text="Movie Theatre Location" />
+                        <Label prefHeight="18.0" prefWidth="75.0" text="Price" />
+                        <Label prefHeight="18.0" prefWidth="83.0" text="Num.tickets" />
+                    </children>
+                </HBox>
+            </children>
+        </FlowPane>
+    </top>
+    <center>
+        <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+    </center>
+</BorderPane>
