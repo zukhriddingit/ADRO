@@ -13,6 +13,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
+<?import javafx.scene.control.PasswordField?>
 <FlowPane columnHalignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="568.0" prefWidth="672.0" style="-fx-background-color: #cddbc4;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.adro.SignUpPageController">
    <children>
       <BorderPane prefHeight="511.0" prefWidth="665.0">
@@ -96,7 +97,7 @@
                               <Insets bottom="10.0" />
                            </VBox.margin>
                         </TextField>
-                        <DatePicker prefHeight="19.0" prefWidth="164.0">
+                        <DatePicker fx:id="dateOfBirth" prefHeight="19.0" prefWidth="164.0">
                            <VBox.margin>
                               <Insets bottom="10.0" />
                            </VBox.margin>
@@ -116,19 +117,19 @@
                               <Insets bottom="10.0" />
                            </VBox.margin>
                         </TextField>
-                        <TextField fx:id="password" promptText="Password">
+                        <PasswordField fx:id="password" promptText="Password">
                            <VBox.margin>
                               <Insets bottom="10.0" />
                            </VBox.margin>
-                        </TextField>
-                        <TextField fx:id="ConfirmPassword" promptText="Password">
+                        </PasswordField>
+                        <PasswordField fx:id="confirmPassword" promptText="Password">
                            <opaqueInsets>
                               <Insets />
                            </opaqueInsets>
                            <VBox.margin>
                               <Insets bottom="10.0" />
                            </VBox.margin>
-                        </TextField>
+                        </PasswordField>
                      </children>
                   </VBox>
                </children>
