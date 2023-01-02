@@ -142,7 +142,7 @@
                         <Image url="@../../../../java/pictures/adro-removebg-preview.png" />
                      </image>
                   </ImageView>
-                  <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="142.0" style="-fx-background-color: #ebb074;" text="Submit!">
+                  <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="142.0" style="-fx-background-color: #ebb074;" text="Submit!" onAction="#registerAction">
                      <font>
                         <Font name="SansSerif Bold" size="14.0" />
                      </font>
