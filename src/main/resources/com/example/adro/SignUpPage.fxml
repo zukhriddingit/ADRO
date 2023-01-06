@@ -77,14 +77,14 @@
                               <Insets bottom="10.0" />
                            </VBox.margin>
                         </Label>
-                        <Label text="Confirm Password">
-                           <font>
-                              <Font name="Poor Richard" size="20.0" />
-                           </font>
-                           <VBox.margin>
-                              <Insets bottom="10.0" />
-                           </VBox.margin>
-                        </Label>
+<!--                        <Label text="Confirm Password">-->
+<!--                           <font>-->
+<!--                              <Font name="Poor Richard" size="20.0" />-->
+<!--                           </font>-->
+<!--                           <VBox.margin>-->
+<!--                              <Insets bottom="10.0" />-->
+<!--                           </VBox.margin>-->
+<!--                        </Label>-->
                      </children>
                   </VBox>
                   <VBox prefHeight="274.0" prefWidth="164.0">
@@ -122,14 +122,14 @@
                               <Insets bottom="10.0" />
                            </VBox.margin>
                         </PasswordField>
-                        <PasswordField fx:id="confirmPassword" promptText="Password">
-                           <opaqueInsets>
-                              <Insets />
-                           </opaqueInsets>
-                           <VBox.margin>
-                              <Insets bottom="10.0" />
-                           </VBox.margin>
-                        </PasswordField>
+<!--                        <PasswordField fx:id="confirmPassword" promptText="Password">-->
+<!--                           <opaqueInsets>-->
+<!--                              <Insets />-->
+<!--                           </opaqueInsets>-->
+<!--                           <VBox.margin>-->
+<!--                              <Insets bottom="10.0" />-->
+<!--                           </VBox.margin>-->
+<!--                        </PasswordField>-->
                      </children>
                   </VBox>
                </children>
