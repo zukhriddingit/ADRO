@@ -13,6 +13,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
+<?import javafx.scene.control.PasswordField?>
 <FlowPane columnHalignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="568.0" prefWidth="672.0" style="-fx-background-color: #cddbc4;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.adro.SignUpPageController">
    <children>
       <BorderPane prefHeight="511.0" prefWidth="665.0">
@@ -76,14 +77,14 @@
                               <Insets bottom="10.0" />
                            </VBox.margin>
                         </Label>
-                        <Label text="Confirm Password">
-                           <font>
-                              <Font name="Poor Richard" size="20.0" />
-                           </font>
-                           <VBox.margin>
-                              <Insets bottom="10.0" />
-                           </VBox.margin>
-                        </Label>
+<!--                        <Label text="Confirm Password">-->
+<!--                           <font>-->
+<!--                              <Font name="Poor Richard" size="20.0" />-->
+<!--                           </font>-->
+<!--                           <VBox.margin>-->
+<!--                              <Insets bottom="10.0" />-->
+<!--                           </VBox.margin>-->
+<!--                        </Label>-->
                      </children>
                   </VBox>
                   <VBox prefHeight="274.0" prefWidth="164.0">
@@ -96,7 +97,7 @@
                               <Insets bottom="10.0" />
                            </VBox.margin>
                         </TextField>
-                        <DatePicker prefHeight="19.0" prefWidth="164.0">
+                        <DatePicker fx:id="dateOfBirth" prefHeight="19.0" prefWidth="164.0">
                            <VBox.margin>
                               <Insets bottom="10.0" />
                            </VBox.margin>
@@ -116,19 +117,19 @@
                               <Insets bottom="10.0" />
                            </VBox.margin>
                         </TextField>
-                        <TextField fx:id="password" promptText="Password">
+                        <PasswordField fx:id="password" promptText="Password">
                            <VBox.margin>
                               <Insets bottom="10.0" />
                            </VBox.margin>
-                        </TextField>
-                        <TextField fx:id="ConfirmPassword" promptText="Password">
-                           <opaqueInsets>
-                              <Insets />
-                           </opaqueInsets>
-                           <VBox.margin>
-                              <Insets bottom="10.0" />
-                           </VBox.margin>
-                        </TextField>
+                        </PasswordField>
+<!--                        <PasswordField fx:id="confirmPassword" promptText="Password">-->
+<!--                           <opaqueInsets>-->
+<!--                              <Insets />-->
+<!--                           </opaqueInsets>-->
+<!--                           <VBox.margin>-->
+<!--                              <Insets bottom="10.0" />-->
+<!--                           </VBox.margin>-->
+<!--                        </PasswordField>-->
                      </children>
                   </VBox>
                </children>
@@ -142,7 +143,7 @@
                         <Image url="@../../../../java/pictures/adro-removebg-preview.png" />
                      </image>
                   </ImageView>
-                  <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="142.0" style="-fx-background-color: #ebb074;" text="Submit!">
+                  <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="142.0" style="-fx-background-color: #ebb074;" text="Submit!" onAction="#registerAction">
                      <font>
                         <Font name="SansSerif Bold" size="14.0" />
                      </font>
