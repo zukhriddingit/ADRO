@@ -26,7 +26,7 @@
                     <children>
                         <VBox prefHeight="436.0" prefWidth="732.0">
                             <children>
-                                <ImageView fitHeight="433.0" fitWidth="567.0" pickOnBounds="true" preserveRatio="true">
+                                <ImageView fx:id="profile_picture" fitHeight="433.0" fitWidth="567.0" pickOnBounds="true" preserveRatio="true">
                                     <image>
                                         <Image url="@../../../../java/pictures/bubfilo.jpg" />
                                     </image>
@@ -96,7 +96,7 @@
                         </VBox>
                         <VBox layoutX="170.0" layoutY="10.0" prefHeight="526.0" prefWidth="390.0">
                             <children>
-                                <Label alignment="TOP_LEFT" prefHeight="43.0" prefWidth="325.0" text="Wednu Yogarty">
+                                <Label fx:id="profile_name" alignment="TOP_LEFT" prefHeight="43.0" prefWidth="325.0" text="Wednu Yogarty">
                                     <font>
                                         <Font name="Constantia" size="36.0" />
                                     </font>
@@ -104,7 +104,7 @@
                                         <Insets bottom="15.0" />
                                     </VBox.margin>
                                 </Label>
-                                <Label alignment="TOP_LEFT" prefHeight="0.0" prefWidth="206.0" text="yiita_152">
+                                <Label fx:id="profile_username" alignment="TOP_LEFT" prefHeight="0.0" prefWidth="206.0" text="yiita_152">
                                     <font>
                                         <Font name="Constantia" size="36.0" />
                                     </font>
@@ -112,7 +112,7 @@
                                         <Insets bottom="15.0" />
                                     </VBox.margin>
                                 </Label>
-                                <Label alignment="TOP_LEFT" layoutX="10.0" layoutY="10.0" prefHeight="43.0" prefWidth="354.0" text="nurryta@gmail.com">
+                                <Label fx:id="profile_email" alignment="TOP_LEFT" layoutX="10.0" layoutY="10.0" prefHeight="43.0" prefWidth="354.0" text="nurryta@gmail.com">
                                     <font>
                                         <Font name="Constantia" size="36.0" />
                                     </font>
@@ -120,7 +120,7 @@
                                         <Insets bottom="15.0" />
                                     </VBox.margin>
                                 </Label>
-                                <Label alignment="TOP_LEFT" layoutX="10.0" layoutY="33.0" prefHeight="43.0" prefWidth="378.0" text="19 years and 5 months">
+                                <Label fx:id="profile_age" alignment="TOP_LEFT" layoutX="10.0" layoutY="33.0" prefHeight="43.0" prefWidth="378.0" text="19 years and 5 months">
                                     <font>
                                         <Font name="Constantia" size="36.0" />
                                     </font>
@@ -128,7 +128,7 @@
                                         <Insets bottom="15.0" />
                                     </VBox.margin>
                                 </Label>
-                                <Label alignment="TOP_LEFT" layoutX="10.0" layoutY="56.0" text="+998(90) 141-53-02">
+                                <Label fx:id="profile_phonenumber" alignment="TOP_LEFT" layoutX="10.0" layoutY="56.0" text="+998(90) 141-53-02">
                                     <font>
                                         <Font name="Constantia" size="36.0" />
                                     </font>
@@ -136,7 +136,7 @@
                                         <Insets bottom="15.0" />
                                     </VBox.margin>
                                 </Label>
-                                <Label alignment="TOP_LEFT" layoutX="10.0" layoutY="80.0" text="*******">
+                                <Label fx:id="profile_password" alignment="TOP_LEFT" layoutX="10.0" layoutY="80.0" text="*******">
                                     <font>
                                         <Font name="Constantia" size="36.0" />
                                     </font>
@@ -154,7 +154,7 @@
                         <Insets top="10.0" />
                     </VBox.margin>
                 </HBox>
-                <Button alignment="CENTER" contentDisplay="CENTER" minHeight="18.0" mnemonicParsing="false" prefHeight="72.0" prefWidth="388.0" style="-fx-background-color: #ebb074;" text="Edit">
+                <Button fx:id="profile_editbtn" alignment="CENTER" contentDisplay="CENTER" minHeight="18.0" mnemonicParsing="false" prefHeight="72.0" prefWidth="388.0" style="-fx-background-color: #ebb074;" text="Edit">
                     <VBox.margin>
                         <Insets left="300.0" />
                     </VBox.margin>
