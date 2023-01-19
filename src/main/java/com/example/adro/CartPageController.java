@@ -1,49 +1,98 @@
 package com.example.adro;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.geometry.Pos;
-import javafx.scene.control.Label;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.FlowPane;
-import javafx.scene.layout.HBox;
+import javafx.fxml.Initializable;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 
-public class CartPageController {
-    @FXML
-    BorderPane borderPane;
+import java.net.URL;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.Date;
+import java.util.ResourceBundle;
 
-    @FXML
-    FlowPane flowPane;
-
-    @FXML
-    HBox hBox;
-
-    @FXML
-    private Label welcomeText;
+public class CartPageController implements Initializable {
 
     @FXML
-    protected void onHelloButtonClick() {
-        addLabel(flowPane);
+    private TableView<Movie> movieTable;
+    @FXML
+    private TableColumn<Movie, String> nameCol;
+    @FXML
+    private TableColumn<Movie, String> theatreCol;
+    @FXML
+    private TableColumn<Movie, String> idCol;
+    @FXML
+    private TableColumn<Movie, String> languageCol;
+    @FXML
+    private TableColumn<Movie, String> timeCol;
+    @FXML
+    private TableColumn<Movie, String> ticketsCol;
+    @FXML
+    private TableColumn<Movie, String> priceCol;
+
+
+
+    @Override
+    public void initialize(URL url, ResourceBundle rb){
+        loadDate();
     }
 
-    public void addLabel(FlowPane flowPane){
-        Label label1 = new Label();
-        label1.setText("Movie Theatre");
-        Label label2 = new Label();
-        label2.setText("Movie Language");
-        Label label3 = new Label();
-        label3.setText("Movie Time");
-        Label label4 = new Label();
-        label4.setText("Tickets");
-        Label label5 = new Label();
-        label5.setText("Price");
-        HBox hBox = new HBox();
-        hBox.setAlignment(Pos.BASELINE_CENTER);
-        hBox.setSpacing(20);
-        hBox.getChildren().add(label1);
-        hBox.getChildren().add(label2);
-        hBox.getChildren().add(label3);
-        hBox.getChildren().add(label4);
-        hBox.getChildren().add(label5);
-        flowPane.getChildren().add(hBox);
+    String query = null;
+    Connection connection = null;
+    PreparedStatement preparedStatement = null;
+    ResultSet resultSet = null;
+    Movie movie = null;
+
+    ObservableList<Movie> Movielist = FXCollections.observableArrayList();
+
+    private void refreshable() throws SQLException {
+        Movielist.clear();
+
+        query = "SELECT * FROM cart";
+        preparedStatement = connection.prepareStatement(query);
+        resultSet = preparedStatement.executeQuery();
+
+        while (resultSet.next()){
+            Movielist.add(new Movie(
+                    resultSet.getString("Movie_name"),
+                    resultSet.getString("Movie_theatre"),
+                    resultSet.getString("Movie_id"),
+                    resultSet.getString("Language"),
+                    resultSet.getDate("Movie_time"),
+                    resultSet.getInt("Tickets_num"),
+                    resultSet.getString("Price")
+            ));
+            movieTable.setItems(Movielist);
+        }
     }
+
+    private void loadDate() {
+        connection = DataBaseConnect.getConnect();
+        try {
+            refreshable();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        nameCol.setCellValueFactory(new PropertyValueFactory<>("name"));
+        theatreCol.setCellValueFactory(new PropertyValueFactory<>("theatre"));
+        idCol.setCellValueFactory(new PropertyValueFactory<>("id"));
+        languageCol.setCellValueFactory(new PropertyValueFactory<>("language"));
+        timeCol.setCellValueFactory(new PropertyValueFactory<>("time"));
+        ticketsCol.setCellValueFactory(new PropertyValueFactory<>("tickets_num"));
+        priceCol.setCellValueFactory(new PropertyValueFactory<>("price"));
+    }
+
+    @FXML
+    private void deleteRow(ActionEvent event){
+        movieTable.getItems().removeAll(movieTable.getSelectionModel().getSelectedItem());
+    }
+
+
 }

@@ -9,7 +9,7 @@ import java.io.IOException;
 
 public class MyProfileApplication extends Application {
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(SignUpPageApplication.class.getResource("MyProfile.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(SignUpPageApplication.class.getResource("CartPage.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 1000, 700);
         stage.setTitle("Cinema Reservation System");
         stage.setScene(scene);
