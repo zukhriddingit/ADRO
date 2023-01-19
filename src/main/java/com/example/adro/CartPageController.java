@@ -94,5 +94,4 @@ public class CartPageController implements Initializable {
         movieTable.getItems().removeAll(movieTable.getSelectionModel().getSelectedItem());
     }
 
-
 }
