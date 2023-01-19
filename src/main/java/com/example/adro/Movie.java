@@ -10,6 +10,7 @@ public class Movie {
 
 
 
+
     public Movie(String name, String theatre,String id, String language, Date time,int tickets_num,String price) {
         this.name = name;
         this.theatre = theatre;
