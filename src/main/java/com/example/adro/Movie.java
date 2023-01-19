@@ -2,6 +2,7 @@ package com.example.adro;
 
 import java.util.Date;
 
+
 public class Movie {
     String name, theatre, id, language, price;
     Date time;
