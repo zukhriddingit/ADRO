@@ -1,8 +1,5 @@
 package com.example.adro;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -32,5 +29,15 @@ public class DataBaseConnect {
         }else{
             System.out.println("Something went wrong!!!");
         }
+    }
+
+    public static boolean getInfo(String username) throws SQLException {
+        PreparedStatement preparedStatement = getConnect().prepareStatement("select * from register where username = ?");
+        preparedStatement.setString(1,username);
+        ResultSet r1 = preparedStatement.executeQuery();
+        if (r1.next()){
+            return true;
+        }
+        else return false;
     }
 }
