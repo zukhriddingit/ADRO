@@ -150,7 +150,7 @@
                      </font>
                   </Button>
                   <HBox>
-                     <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="17.0" prefWidth="409.0" text="Do you already have an account?" textAlignment="RIGHT" textOverrun="CENTER_ELLIPSIS">
+                     <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="17.0" prefWidth="385.0" text="Already have an account?" textAlignment="RIGHT" textOverrun="CENTER_ELLIPSIS">
                         <HBox.margin>
                            <Insets right="1.0" />
                         </HBox.margin>

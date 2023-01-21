@@ -40,4 +40,16 @@ public class DataBaseConnect {
         }
         else return false;
     }
+
+    public static boolean checkPassword(String username,String password) throws SQLException {
+        PreparedStatement preparedStatement = getConnect().prepareStatement("SELECT password FROM `register` WHERE username=? AND password=?;");
+        preparedStatement.setString(1,username);
+        preparedStatement.setString(2,password);
+        ResultSet r = preparedStatement.executeQuery();
+        if (r.next()){
+            return true;
+        }
+        return false;
+    }
+
 }
