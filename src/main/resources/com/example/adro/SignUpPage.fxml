@@ -141,7 +141,7 @@
                   <Label fx:id="errorMsg" textFill="#e81818" />
                   <ImageView fitHeight="167.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../../java/pictures/adro-removebg-preview.png" />
+                        <Image url="file:/D:/java%20Praktikum/ADROFinal/src/main/java/pictures/adro-removebg-preview.png" />
                      </image>
                   </ImageView>
                   <Button mnemonicParsing="false" onAction="#registerAction" prefHeight="25.0" prefWidth="142.0" style="-fx-background-color: #ebb074;" text="Submit!">
