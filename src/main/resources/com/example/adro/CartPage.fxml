@@ -3,52 +3,51 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
-
 
 <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="792.0" prefWidth="1532.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.adro.CartPageController">
     <children>
         <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="790.0" prefWidth="1535.0">
             <bottom>
-                <AnchorPane prefHeight="170.0" prefWidth="1291.0" style="-fx-background-color: #239687;" BorderPane.alignment="CENTER">
+                <AnchorPane prefHeight="152.0" prefWidth="1535.0" style="-fx-background-color: #239687;" BorderPane.alignment="CENTER">
                     <children>
-                  <AnchorPane prefHeight="10.0" prefWidth="1091.0" style="-fx-background-color: #c2a44a;" />
-                        <Button layoutX="212.0" layoutY="49.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="123.0" style="-fx-border-radius: 50; -fx-background-color: #b71f1f; -fx-line-spacing: 7; -fx-border-color: white; -fx-background-radius: 50; -fx-font-size: 14; -fx-border-style: dotted;" text="Pay via Click" textFill="#f5f5fa">
+                  <AnchorPane layoutX="192.0" prefHeight="10.0" prefWidth="1155.0" style="-fx-background-color: #c2a44a;" />
+                        <Button layoutX="369.0" layoutY="54.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="154.0" style="-fx-border-radius: 50; -fx-background-color: #b71f1f; -fx-line-spacing: 7; -fx-border-color: white; -fx-background-radius: 50; -fx-font-size: 16; -fx-border-style: dotted;" text="Pay via Click" textFill="#f5f5fa">
                      <font>
                         <Font size="94.0" />
                      </font></Button>
-                        <Button layoutX="491.0" layoutY="49.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="109.0" style="-fx-background-color: #b71f1f; -fx-border-radius: 50; -fx-line-spacing: 7; -fx-border-color: white; -fx-background-radius: 50; -fx-font-size: 14; -fx-border-style: dotted;" text="Pay via Payme" textFill="#f7f3f3" wrapText="true">
+                  <Button fx:id="deleteButton" layoutX="1042.0" layoutY="54.0" mnemonicParsing="false" onAction="#deleteRow" prefHeight="43.0" prefWidth="154.0" style="-fx-background-color: #b71f1f; -fx-border-radius: 50; -fx-line-spacing: 7; -fx-border-color: white; -fx-background-radius: 50; -fx-font-size: 16; -fx-border-style: dotted;" text="Delete movie" textFill="#f7f3f3" wrapText="true">
                      <font>
                         <Font size="17.0" />
-                     </font></Button>
-                  <Button fx:id="deleteButton" layoutX="768.0" layoutY="49.0" mnemonicParsing="false" onAction="#deleteRow" prefHeight="31.0" prefWidth="109.0" style="-fx-background-color: #b71f1f; -fx-border-radius: 50; -fx-line-spacing: 7; -fx-border-color: white; -fx-background-radius: 50; -fx-font-size: 14; -fx-border-style: dotted;" text="Delete movie" textFill="#f7f3f3" wrapText="true">
+                     </font>
+                  </Button>
+                  <Button layoutX="692.0" layoutY="55.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="154.0" style="-fx-border-radius: 50; -fx-background-color: #b71f1f; -fx-line-spacing: 7; -fx-border-color: white; -fx-background-radius: 50; -fx-font-size: 16; -fx-border-style: dotted;" text="Pay via Payme" textFill="#f5f5fa">
                      <font>
-                        <Font size="17.0" />
+                        <Font size="94.0" />
                      </font>
                   </Button>
                     </children>
                 </AnchorPane>
             </bottom>
          <top>
-            <AnchorPane prefHeight="130.0" prefWidth="1291.0" style="-fx-background-color: #239687;" BorderPane.alignment="CENTER">
+            <AnchorPane prefHeight="127.0" prefWidth="1535.0" style="-fx-background-color: #239687;" BorderPane.alignment="CENTER">
                <children>
-                  <Text fill="#b71f1f" layoutX="680.0" layoutY="74.0" lineSpacing="10.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cart Movies" wrappingWidth="357.3367614746094">
+                  <Text fill="#b71f1f" layoutX="589.0" layoutY="91.0" lineSpacing="10.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 60;" text="Cart Movies" wrappingWidth="357.3367614746094">
                      <font>
                         <Font name="Comic Sans MS" size="41.0" />
                      </font>
                   </Text>
-                  <AnchorPane layoutY="130.0" prefHeight="12.0" prefWidth="1091.0" style="-fx-background-color: #c2a44a;" />
+                  <AnchorPane layoutX="191.0" layoutY="140.0" prefHeight="9.0" prefWidth="1155.0" style="-fx-background-color: #c2a44a;" />
                </children>
             </AnchorPane>
          </top>
-         <left>
-                <TableView fx:id="movieTable" prefHeight="478.0" prefWidth="1093.0" style="-fx-background-color: #cfbfde;" BorderPane.alignment="CENTER">
+         <center>
+                <TableView fx:id="movieTable" prefHeight="495.0" prefWidth="1287.0" style="-fx-background-color: #cfbfde;" BorderPane.alignment="CENTER">
                     <columns>
                         <TableColumn fx:id="nameCol" minWidth="0.0" prefWidth="165.60000306367874" text="Movie name" />
                         <TableColumn fx:id="theatreCol" prefWidth="163.2000274658203" text="Movie Theatre" />
@@ -59,13 +58,21 @@
                   <TableColumn fx:id="priceCol" minWidth="4.800048828125" prefWidth="152.00006103515625" text="Price" />
                     </columns>
                 </TableView>
-         </left>
+         </center>
          <right>
-            <ImageView fitHeight="459.0" fitWidth="442.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
-               <image>
-                  <Image url="@../../../../java/pictures/adro-removebg-preview.png" />
-               </image></ImageView>
+            <FlowPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #239687;" BorderPane.alignment="CENTER">
+               <children>
+                  <AnchorPane prefHeight="490.0" prefWidth="10.0" style="-fx-background-color: #c2a44a;" />
+               </children>
+            </FlowPane>
          </right>
+         <left>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #239687;" BorderPane.alignment="CENTER">
+               <children>
+                  <AnchorPane layoutX="191.0" layoutY="1.0" prefHeight="490.0" prefWidth="12.0" style="-fx-background-color: #c2a44a;" />
+               </children>
+            </AnchorPane>
+         </left>
         </BorderPane>
 
     </children>
