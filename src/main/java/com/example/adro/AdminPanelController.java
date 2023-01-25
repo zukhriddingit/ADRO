@@ -1,7 +1,9 @@
 package com.example.adro;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.ChoiceBox;
+import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
@@ -9,9 +11,10 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 
-import java.util.ArrayList;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class AdminPanelController {
+public class AdminPanelController implements Initializable {
 
     @FXML
     private TableColumn<?, ?> ID;
@@ -23,16 +26,25 @@ public class AdminPanelController {
     private TableColumn<?, ?> NumberOfTickets;
 
     @FXML
+    private Button addMovieBtn;
+
+    @FXML
+    private ComboBox<String> combo_genre;
+
+    @FXML
+    private ComboBox<String> combo_languages;
+
+    @FXML
     private DatePicker movieDate;
 
     @FXML
     private TextArea movieDescription;
 
     @FXML
-    private ChoiceBox<String> movieGenre;
+    private TextField movieDuration;
 
     @FXML
-    private ChoiceBox<String> movieLanguage;
+    private TextField moviePrice;
 
     @FXML
     private TextField movieTitle;
@@ -43,9 +55,11 @@ public class AdminPanelController {
     @FXML
     private Label welcomeText;
 
-    public ChoiceBox<?> getMovieGenre() {
-        movieGenre.getItems().add("Action");
-        movieGenre.getItems().add("Thriller");
-        return movieGenre;
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        String[] choice = {"Action", "Thriller", "Comedy"};
+        combo_genre.getItems().addAll(choice);
+        String[] languages = {"English", "Russian", "Uzbek"};
+        combo_languages.getItems().addAll(languages);
     }
 }
