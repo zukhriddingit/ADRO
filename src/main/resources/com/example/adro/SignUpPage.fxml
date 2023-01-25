@@ -141,7 +141,7 @@
                   <Label fx:id="errorMsg" textFill="#e81818" />
                   <ImageView fitHeight="167.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../../java/pictures/adro-removebg-preview.png" />
+                        <Image url="file:/D:/java%20Praktikum/ADROFinal/src/main/java/pictures/adro-removebg-preview.png" />
                      </image>
                   </ImageView>
                   <Button mnemonicParsing="false" onAction="#registerAction" prefHeight="25.0" prefWidth="142.0" style="-fx-background-color: #ebb074;" text="Submit!">
@@ -150,7 +150,7 @@
                      </font>
                   </Button>
                   <HBox>
-                     <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="17.0" prefWidth="409.0" text="Do you already have an account?" textAlignment="RIGHT" textOverrun="CENTER_ELLIPSIS">
+                     <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="17.0" prefWidth="385.0" text="Already have an account?" textAlignment="RIGHT" textOverrun="CENTER_ELLIPSIS">
                         <HBox.margin>
                            <Insets right="1.0" />
                         </HBox.margin>
