@@ -1,3 +1,10 @@
 .scroll-pane > .viewport{
     -fx-background-color:#323030;
 }
+.btn:hover{
+    -fx-background-color: #454646;
+
+}
+.movie-btn:hover{
+    -fx-background-color:#454646;
+}
