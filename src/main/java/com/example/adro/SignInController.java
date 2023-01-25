@@ -29,7 +29,7 @@ public class SignInController {
             Node node = (Node)event.getSource();
             Stage dialogStage = (Stage) node.getScene().getWindow();
             dialogStage.close();
-            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("Dashboard.fxml")));
+            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("AdminPanel.fxml")),1440,780);
             dialogStage.setScene(scene);
             dialogStage.show();
         } else {

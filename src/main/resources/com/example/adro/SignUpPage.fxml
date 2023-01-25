@@ -122,14 +122,6 @@
                               <Insets bottom="10.0" />
                            </VBox.margin>
                         </PasswordField>
-<!--                        <PasswordField fx:id="confirmPassword" promptText="Password">-->
-<!--                           <opaqueInsets>-->
-<!--                              <Insets />-->
-<!--                           </opaqueInsets>-->
-<!--                           <VBox.margin>-->
-<!--                              <Insets bottom="10.0" />-->
-<!--                           </VBox.margin>-->
-<!--                        </PasswordField>-->
                      </children>
                   </VBox>
                </children>
