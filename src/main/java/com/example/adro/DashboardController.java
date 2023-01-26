@@ -44,12 +44,30 @@ public class DashboardController implements Initializable {
                     createCustomNode("The Dark Knight", "TheDarkKnight",file.toURI().toURL().toString()+"movie_6.jpg","image6"),
                     createCustomNode("LUCY", "lucy",file.toURI().toURL().toString()+"movie_7.jpg","image7"),
                     createCustomNode("WEDNESDAY", "wednesday",file.toURI().toURL().toString()+"movie_8.jpg","image8"),
+                    createCustomNode("Forrest Gump", "ForrestGump",file.toURI().toURL().toString()+"movie_10.jpg","image9"),
                     createCustomNode("Nope", "nope",file.toURI().toURL().toString()+"verMovie_2.jpeg","image"));
         } catch (MalformedURLException e) {
             throw new RuntimeException(e);
         }
         scrollPane_TopMovies.setContent(hBox);
 
+        HBox hbox = new HBox();
+        hbox.setAlignment(Pos.BASELINE_CENTER);
+        try {
+            hbox.getChildren().addAll(
+                    createCustomNode("Puss in Boots", "pussInBoots",file.toURI().toURL().toString()+"new_movie1.jpg","new_image1"),
+                    createCustomNode("Avatar II ", "avatar2",file.toURI().toURL().toString()+"new_movie2.jpg","new_image2"),
+                    createCustomNode("High Heat", "HighHeat",file.toURI().toURL().toString()+"new_movie3.jpg","new_image3"),
+                    createCustomNode("Violent Night", "ViolentNight",file.toURI().toURL().toString()+"new_movie4.jpg","new_image4"),
+                    createCustomNode("Troll", "troll",file.toURI().toURL().toString()+"new_movie5.jpg","new_image5"),
+                    createCustomNode("Wakanda Forever", "WakandaForever",file.toURI().toURL().toString()+"new_movie6.jpg","new_image6"),
+                    createCustomNode("Detective Knight", "DetectiveKnight",file.toURI().toURL().toString()+"new_movie7.jpg","new_image7"),
+                    createCustomNode("The Woman King", "WomanKing",file.toURI().toURL().toString()+"new_movie8.jpg","new_image8"),
+                    createCustomNode("All Quiet on the Western Front", "WesternFront",file.toURI().toURL().toString()+"movie_9.jpg","new_image9"));
+        } catch (MalformedURLException e) {
+            throw new RuntimeException(e);
+        }
+        scrollPane_NewMovies.setContent(hbox);
 
     }
 

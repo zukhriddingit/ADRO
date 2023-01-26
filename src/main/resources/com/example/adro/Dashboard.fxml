@@ -80,9 +80,9 @@
                         <Font name="Bernard MT Condensed" size="27.0" />
                      </font>
                   </Label>
-                  <HBox layoutX="8.0" layoutY="54.0" prefHeight="260.0" prefWidth="2006.0">
+                  <HBox layoutX="8.0" layoutY="54.0" prefHeight="260.0" prefWidth="1577.0" style="-fx-background-color: #454646;">
                      <children>
-                        <ScrollPane fx:id="scrollPane_TopMovies" prefHeight="260.0" prefWidth="2000.0" styleClass="movie-btn" stylesheets="@DesignDashboard.css">
+                        <ScrollPane fx:id="scrollPane_TopMovies" prefHeight="260.0" prefWidth="1532.0" style="-fx-background-color: #454646;" styleClass="movie-btn" stylesheets="@DesignDashboard.css">
                            <cursor>
                               <Cursor fx:constant="DEFAULT" />
                            </cursor></ScrollPane>
@@ -93,9 +93,9 @@
                         <Font name="Bernard MT Condensed" size="27.0" />
                      </font>
                   </Label>
-                  <HBox layoutX="8.0" layoutY="350.0" prefHeight="260.0" prefWidth="2006.0">
+                  <HBox layoutX="8.0" layoutY="350.0" prefHeight="260.0" prefWidth="1532.0">
                      <children>
-                        <ScrollPane fx:id="scrollPane_NewMovies" prefHeight="260.0" prefWidth="2000.0" styleClass="movie-btn" stylesheets="@DesignDashboard.css">
+                        <ScrollPane fx:id="scrollPane_NewMovies" prefHeight="260.0" prefWidth="1532.0" style="-fx-background-color: #454646;" styleClass="movie-btn" stylesheets="@DesignDashboard.css">
                            <cursor>
                               <Cursor fx:constant="DEFAULT" />
                            </cursor></ScrollPane>
