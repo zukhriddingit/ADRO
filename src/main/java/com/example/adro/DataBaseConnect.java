@@ -42,7 +42,7 @@ public class DataBaseConnect {
     }
 
     public static boolean checkPassword(String username,String password) throws SQLException {
-        PreparedStatement preparedStatement = getConnect().prepareStatement("SELECT password FROM `register` WHERE username=? AND password=?;");
+        PreparedStatement preparedStatement = getConnect().prepareStatement("SELECT password FROM `register` WHERE BINARY username=? AND BINARY  password=?;");
         preparedStatement.setString(1,username);
         preparedStatement.setString(2,password);
         ResultSet r = preparedStatement.executeQuery();
