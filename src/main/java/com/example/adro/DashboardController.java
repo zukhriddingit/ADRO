@@ -1,19 +1,22 @@
 package com.example.adro;
 
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
-import javafx.scene.control.TextArea;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.FlowPane;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.*;
+import javafx.scene.paint.Color;
+import javafx.stage.Stage;
 
 import java.io.File;
 import java.io.IOException;
@@ -93,6 +96,25 @@ public class DashboardController implements Initializable {
         button.setMaxHeight(210);
         button.setGraphic(imageView);
         button.setStyle("-fx-background-color: transparent;"+"-fx-cursor:hand;");
+        button.setOnAction( new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                Node node = (Node)event.getSource();
+                Stage dialogStage = (Stage) node.getScene().getWindow();
+                dialogStage.close();
+                Scene scene = null;
+                try {
+                    scene = new Scene(FXMLLoader.load(getClass().getResource("MoviePage.fxml")));
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+                dialogStage.setScene(scene);
+                dialogStage.show();
+
+            }
+        });
+
+
 
         vBox1.setSpacing(10);
         vBox1.getChildren().add(button);
@@ -101,12 +123,16 @@ public class DashboardController implements Initializable {
        return vBox1;
     }
 
-    private void Onclick() throws IOException {
-//        FXMLLoader fxmlLoader = new FXMLLoader();
-//        fxmlLoader.setLocation(getClass().getResource("MoviePage.fxml"));
-//        fxmlLoader.load();
+//    private void Onclick(ActionEvent event)throws IOException  {
+//        Node node = (Node)event.getSource();
+//        Stage dialogStage = (Stage) node.getScene().getWindow();
+//        dialogStage.close();
+//        Scene scene = new Scene(FXMLLoader.load(getClass().getResource("MoviePage.fxml")));
+//        dialogStage.setScene(scene);
+//        dialogStage.show();
+
 
     }
 
 
-}
+

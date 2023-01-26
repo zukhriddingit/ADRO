@@ -18,13 +18,13 @@
          <top>
             <AnchorPane prefHeight="54.0" prefWidth="949.0" style="-fx-background-color: #000;" BorderPane.alignment="CENTER">
                <children>
-                  <TextField layoutX="111.0" layoutY="14.0" prefHeight="25.0" prefWidth="345.0" promptText=" Search" AnchorPane.leftAnchor="111.0" AnchorPane.rightAnchor="493.0" />
+                  <TextField layoutX="102.0" layoutY="14.0" prefHeight="25.0" prefWidth="345.0" promptText=" Search" styleClass="search" stylesheets="@DesignDashboard.css" AnchorPane.leftAnchor="102.0" AnchorPane.rightAnchor="502.0" />
                   <Label layoutX="8.0" layoutY="9.0" text="ADRO" textFill="#df7d7d" underline="true">
                      <font>
                         <Font name="Comic Sans MS" size="24.0" />
                      </font>
                   </Label>
-                  <Button layoutX="692.0" layoutY="15.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="66.0" style="-fx-background-color: black;" styleClass="btn" stylesheets="@DesignDashboard.css" text="Cart" textFill="WHITE" AnchorPane.rightAnchor="198.0">
+                  <Button layoutX="704.0" layoutY="13.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="66.0" styleClass="btn" stylesheets="@DesignDashboard.css" text="Cart" textFill="WHITE" AnchorPane.rightAnchor="179.0">
                      <font>
                         <Font name="System Bold" size="13.0" />
                      </font>
@@ -32,7 +32,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <Button layoutX="760.0" layoutY="14.0" mnemonicParsing="false" style="-fx-background-color: black;" styleClass="btn" stylesheets="@DesignDashboard.css" text="About us" textFill="WHITE" AnchorPane.rightAnchor="115.0">
+                  <Button layoutX="778.0" layoutY="14.0" mnemonicParsing="false" styleClass="btn" stylesheets="@DesignDashboard.css" text="About us" textFill="WHITE" AnchorPane.rightAnchor="97.0">
                      <font>
                         <Font name="System Bold" size="13.0" />
                      </font>
@@ -40,7 +40,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <Button layoutX="597.0" layoutY="15.0" mnemonicParsing="false" style="-fx-background-color: black;" styleClass="btn" stylesheets="@DesignDashboard.css" text="Favorities" textFill="WHITE" AnchorPane.rightAnchor="274.0">
+                  <Button layoutX="619.0" layoutY="13.0" mnemonicParsing="false" styleClass="btn" stylesheets="@DesignDashboard.css" text="Favorities" textFill="WHITE" AnchorPane.rightAnchor="252.0">
                      <font>
                         <Font name="System Bold" size="13.0" />
                      </font>
@@ -48,27 +48,27 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <Button layoutX="511.0" layoutY="13.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="86.0" style="-fx-background-color: transparent;" styleClass="btn" stylesheets="@DesignDashboard.css" text="Categories" textFill="WHITE" AnchorPane.rightAnchor="352.0">
-                     <font>
-                        <Font name="System Bold" size="13.0" />
-                     </font>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                  </Button>
-                  <Separator layoutX="102.0" layoutY="9.0" orientation="VERTICAL" prefHeight="36.0" prefWidth="9.0" />
-                  <Separator layoutX="844.0" layoutY="7.0" orientation="VERTICAL" prefHeight="39.0" prefWidth="15.0" AnchorPane.rightAnchor="90.0" />
-                  <Button layoutX="871.0" layoutY="15.0" mnemonicParsing="false" style="-fx-background-color: #000;" styleClass="btn" stylesheets="@DesignDashboard.css" text="Sign In" textFill="WHITE" AnchorPane.rightAnchor="14.0">
+                  <Separator layoutX="93.0" layoutY="9.0" orientation="VERTICAL" prefHeight="36.0" prefWidth="9.0" />
+                  <Separator layoutX="852.0" layoutY="10.0" orientation="VERTICAL" prefHeight="39.0" prefWidth="15.0" AnchorPane.rightAnchor="82.0" />
+                  <Button layoutX="871.0" layoutY="15.0" mnemonicParsing="false" styleClass="btn" stylesheets="@DesignDashboard.css" text="Sign In" textFill="WHITE" AnchorPane.rightAnchor="14.0">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor></Button>
-                  <Button layoutX="456.0" layoutY="14.0" mnemonicParsing="false" style="-fx-background-color: #000;" styleClass="btn" stylesheets="@DesignDashboard.css" text="Search" textFill="WHITE" AnchorPane.rightAnchor="441.0">
+                  <Button layoutX="456.0" layoutY="12.0" maxHeight="-Infinity" mnemonicParsing="false" prefHeight="30.0" prefWidth="64.0" styleClass="btn" stylesheets="@DesignDashboard.css" text="Search" textFill="WHITE" AnchorPane.rightAnchor="429.0">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font></Button>
+                  <Button layoutX="528.0" layoutY="13.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="83.0" styleClass="btn" stylesheets="@DesignDashboard.css" text="Categories" textFill="WHITE" AnchorPane.rightAnchor="338.0">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
                </children>
             </AnchorPane>
          </top>
@@ -82,7 +82,7 @@
                   </Label>
                   <HBox layoutX="8.0" layoutY="54.0" prefHeight="260.0" prefWidth="1577.0" style="-fx-background-color: #454646;">
                      <children>
-                        <ScrollPane fx:id="scrollPane_TopMovies" prefHeight="260.0" prefWidth="1532.0" style="-fx-background-color: #454646;" styleClass="movie-btn" stylesheets="@DesignDashboard.css">
+                        <ScrollPane fx:id="scrollPane_TopMovies" prefHeight="260.0" prefWidth="1532.0" styleClass="movie-btn" stylesheets="@DesignDashboard.css">
                            <cursor>
                               <Cursor fx:constant="DEFAULT" />
                            </cursor></ScrollPane>
@@ -95,7 +95,7 @@
                   </Label>
                   <HBox layoutX="8.0" layoutY="350.0" prefHeight="260.0" prefWidth="1532.0">
                      <children>
-                        <ScrollPane fx:id="scrollPane_NewMovies" prefHeight="260.0" prefWidth="1532.0" style="-fx-background-color: #454646;" styleClass="movie-btn" stylesheets="@DesignDashboard.css">
+                        <ScrollPane fx:id="scrollPane_NewMovies" prefHeight="260.0" prefWidth="1532.0" styleClass="movie-btn" stylesheets="@DesignDashboard.css">
                            <cursor>
                               <Cursor fx:constant="DEFAULT" />
                            </cursor></ScrollPane>

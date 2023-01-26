@@ -1,10 +1,25 @@
-.scroll-pane > .viewport{
+.viewport{
     -fx-background-color:#323030;
 }
 .btn:hover{
+    -fx-background-color: #750503;
+}
+.btn{
+    -fx-background-color: transparent;
+}
+.movie-btn{
     -fx-background-color: #454646;
-
 }
 .movie-btn:hover{
     -fx-background-color:#979797;
+}
+.search{
+    -fx-background-color: black;
+    -fx-text-fill: white;
+    -fx-border-color: #440046;
+    -fx-border-radius: 50;
+    -fx-border-width: 2;
+}
+.search:hover{
+    -fx-border-color:#a8a7a7;
 }
