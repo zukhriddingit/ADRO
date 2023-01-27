@@ -52,7 +52,6 @@ public class SignUpPageController {
             dialogStage.setScene(scene);
             dialogStage.show();
         }
-
     }
 
     public void toSignIn(ActionEvent event) throws IOException {
