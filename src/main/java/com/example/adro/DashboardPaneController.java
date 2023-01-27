@@ -32,6 +32,11 @@ public class DashboardPaneController implements Initializable {
     private Pane dashboardPane;
 
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        movie(scrollPane_NewMovies2,scrollPane_TopMovies2);
+
+
+    }
+    public  void movie(ScrollPane scrollPane_NewMovies,ScrollPane scrollPane_TopMovies){
 
         File file = new File("src/main/java/pictures");
         HBox hBox = new HBox(); // for scrollpane
@@ -51,7 +56,7 @@ public class DashboardPaneController implements Initializable {
         } catch (MalformedURLException e) {
             throw new RuntimeException(e);
         }
-        scrollPane_TopMovies2.setContent(hBox);
+        scrollPane_TopMovies.setContent(hBox);
 
         HBox hbox = new HBox();
         hbox.setAlignment(Pos.BASELINE_CENTER);
@@ -69,8 +74,7 @@ public class DashboardPaneController implements Initializable {
         } catch (MalformedURLException e) {
             throw new RuntimeException(e);
         }
-        scrollPane_NewMovies2.setContent(hbox);
-
+        scrollPane_NewMovies.setContent(hbox);
     }
 
     public Node createCustomNode(String movieName, String movieID, String imageLink, String imageID) {

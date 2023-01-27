@@ -47,8 +47,9 @@ public class DashboardController implements Initializable {
 
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-        File file=new File("src/main/java/pictures");
-        HBox hBox=new HBox(); // for scrollpane
+
+        File file = new File("src/main/java/pictures");
+        HBox hBox = new HBox(); // for scrollpane
         hBox.setAlignment(Pos.BASELINE_CENTER);
 
         try {
@@ -85,6 +86,8 @@ public class DashboardController implements Initializable {
         }
         scrollPane_NewMovies.setContent(hbox);
 
+
+
     }
 
     public Node createCustomNode(String movieName, String movieID, String imageLink, String imageID){
@@ -118,7 +121,7 @@ public class DashboardController implements Initializable {
             public void handle(ActionEvent actionEvent) {
                 Parent fxml = null;
                 try {
-                    fxml = FXMLLoader.load(getClass().getResource("MoviePage.fxml"));
+                    fxml = FXMLLoader.load(getClass().getResource("Asilbek's_Version_MoviePage.fxml"));
                 } catch (IOException e) {
                     throw new RuntimeException(e);
                 }
