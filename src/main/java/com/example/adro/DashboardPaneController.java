@@ -32,11 +32,11 @@ public class DashboardPaneController implements Initializable {
     private Pane dashboardPane;
 
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        movie(scrollPane_NewMovies2,scrollPane_TopMovies2);
+        movie(scrollPane_TopMovies2,scrollPane_NewMovies2);
 
 
     }
-    public  void movie(ScrollPane scrollPane_NewMovies,ScrollPane scrollPane_TopMovies){
+    public  void movie(ScrollPane scrollPane_TopMovies,ScrollPane scrollPane_NewMovies){
 
         File file = new File("src/main/java/pictures");
         HBox hBox = new HBox(); // for scrollpane
@@ -101,14 +101,14 @@ public class DashboardPaneController implements Initializable {
         vBox1.setAlignment(Pos.CENTER);
 
 
-        //Giving onAction command to the button
+        //Giving onAction command to the movie  button
 
         button.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
-                Parent fxml = null;
+                Parent fxml;
                 try {
-                    fxml = FXMLLoader.load(getClass().getResource("MoviePage.fxml"));
+                    fxml = FXMLLoader.load(getClass().getResource("AsilbeksVersionMoviePage.fxml"));
                 } catch (IOException e) {
                     throw new RuntimeException(e);
                 }

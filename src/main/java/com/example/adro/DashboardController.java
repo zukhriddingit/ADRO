@@ -47,6 +47,35 @@ public class DashboardController implements Initializable {
 
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
+        returnButton.setOnAction(new EventHandler<ActionEvent>() {
+
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                Parent fxml = null;
+                try {
+                    fxml= FXMLLoader.load(getClass().getResource("DashboardPane.fxml"));
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+                dashboardPane.getChildren().removeAll();
+                dashboardPane.getChildren().setAll(fxml);
+            }
+        });
+        profileButton.setOnAction(new EventHandler<ActionEvent>() {
+
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                Parent fxml = null;
+                try {
+                    fxml= FXMLLoader.load(getClass().getResource("MyProfile.fxml"));
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+                dashboardPane.getChildren().removeAll();
+                dashboardPane.getChildren().setAll(fxml);
+            }
+        });
+
 
         File file = new File("src/main/java/pictures");
         HBox hBox = new HBox(); // for scrollpane
@@ -130,39 +159,10 @@ public class DashboardController implements Initializable {
 
             }
         });
-        returnButton.setOnAction(new EventHandler<ActionEvent>() {
-
-            @Override
-            public void handle(ActionEvent actionEvent) {
-                Parent fxml = null;
-                try {
-                    fxml= FXMLLoader.load(getClass().getResource("DashboardPane.fxml"));
-                } catch (IOException e) {
-                    throw new RuntimeException(e);
-                }
-                dashboardPane.getChildren().removeAll();
-                dashboardPane.getChildren().setAll(fxml);
-            }
-        });
-        profileButton.setOnAction(new EventHandler<ActionEvent>() {
-
-            @Override
-            public void handle(ActionEvent actionEvent) {
-                Parent fxml = null;
-                try {
-                    fxml= FXMLLoader.load(getClass().getResource("MyProfile.fxml"));
-                } catch (IOException e) {
-                    throw new RuntimeException(e);
-                }
-                dashboardPane.getChildren().removeAll();
-                dashboardPane.getChildren().setAll(fxml);
-            }
-        });
-
 
        return vBox1;
     }
-    }
+   }
 
 
 
