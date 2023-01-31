@@ -26,7 +26,13 @@ public class AdminPanelController implements Initializable {
     private TableColumn<?, ?> NumberOfTickets;
 
     @FXML
-    private Button addMovieBtn;
+    private Button addMovieBtn1;
+
+    @FXML
+    private Button addMovieBtn11;
+
+    @FXML
+    private Button addMovieBtn21;
 
     @FXML
     private ComboBox<String> combo_genre;
@@ -35,7 +41,7 @@ public class AdminPanelController implements Initializable {
     private ComboBox<String> combo_languages;
 
     @FXML
-    private DatePicker movieDate;
+    private ComboBox<String> combo_session;
 
     @FXML
     private TextArea movieDescription;
@@ -44,7 +50,13 @@ public class AdminPanelController implements Initializable {
     private TextField movieDuration;
 
     @FXML
+    private DatePicker movieEndDate;
+
+    @FXML
     private TextField moviePrice;
+
+    @FXML
+    private DatePicker movieStartDate;
 
     @FXML
     private TextField movieTitle;
@@ -57,9 +69,11 @@ public class AdminPanelController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        String[] choice = {"Action", "Thriller", "Comedy"};
-        combo_genre.getItems().addAll(choice);
+        String[] genres = {"Action", "Thriller", "Comedy", "Horror"};
+        combo_genre.getItems().addAll(genres);
         String[] languages = {"English", "Russian", "Uzbek"};
         combo_languages.getItems().addAll(languages);
+        String[] sessions = {"10:00", "12:00", "15:00", "18:00", "21:00"};
+        combo_session.getItems().addAll(sessions);
     }
 }
