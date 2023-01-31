@@ -23,3 +23,7 @@
 .search:hover{
     -fx-border-color:#a8a7a7;
 }
+.adro-btn{
+    -fx-background-color:transparent;
+    -fx-cursor:hand;
+}

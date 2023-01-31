@@ -8,6 +8,7 @@ import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -32,10 +33,52 @@ public class DashboardController implements Initializable {
     @FXML
     private ScrollPane scrollPane_TopMovies;
 
+    @FXML
+    private Pane dashboardPane;
+
+    @FXML
+    private Button cartButton;
+
+    @FXML
+    private Button profileButton;
+
+    @FXML
+    private Button returnButton;
+
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-        File file=new File("src/main/java/pictures");
-        HBox hBox=new HBox();
+        returnButton.setOnAction(new EventHandler<ActionEvent>() {
+
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                Parent fxml = null;
+                try {
+                    fxml= FXMLLoader.load(getClass().getResource("DashboardPane.fxml"));
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+                dashboardPane.getChildren().removeAll();
+                dashboardPane.getChildren().setAll(fxml);
+            }
+        });
+        profileButton.setOnAction(new EventHandler<ActionEvent>() {
+
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                Parent fxml = null;
+                try {
+                    fxml= FXMLLoader.load(getClass().getResource("MyProfile.fxml"));
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+                dashboardPane.getChildren().removeAll();
+                dashboardPane.getChildren().setAll(fxml);
+            }
+        });
+
+
+        File file = new File("src/main/java/pictures");
+        HBox hBox = new HBox(); // for scrollpane
         hBox.setAlignment(Pos.BASELINE_CENTER);
 
         try {
@@ -72,6 +115,8 @@ public class DashboardController implements Initializable {
         }
         scrollPane_NewMovies.setContent(hbox);
 
+
+
     }
 
     public Node createCustomNode(String movieName, String movieID, String imageLink, String imageID){
@@ -81,58 +126,44 @@ public class DashboardController implements Initializable {
         imageView.setFitWidth(150);
         imageView.setId(imageID);
 
-        //imageView.setOnMouseClicked(mouseEvent -> Method1(movieName+"   "+movieID, studentInfo));
-
-        VBox vBox=new VBox();
-        Label label = new Label(movieName);
-        label.setStyle("-fx-text-fill:white;" + "-fx-font-weight: 700;");
-        vBox.setAlignment(Pos.CENTER);
-        vBox.getChildren().add(label);
-
-
+        // For 1 vertical column
         VBox vBox1=new VBox();
         Button button = new Button();
         button.setMaxWidth(150);
         button.setMaxHeight(210);
         button.setGraphic(imageView);
         button.setStyle("-fx-background-color: transparent;"+"-fx-cursor:hand;");
+
+        Label label = new Label(movieName);
+        label.setStyle("-fx-text-fill:white;" + "-fx-font-weight: 700;");
+        vBox1.setSpacing(10);
+        vBox1.getChildren().add(button);
+        vBox1.getChildren().add(label);
+        vBox1.setStyle("-fx-padding: 5;");
+        vBox1.setAlignment(Pos.CENTER);
+
+
+       //Giving onAction command to the button
+
         button.setOnAction( new EventHandler<ActionEvent>() {
             @Override
-            public void handle(ActionEvent event) {
-                Node node = (Node)event.getSource();
-                Stage dialogStage = (Stage) node.getScene().getWindow();
-                dialogStage.close();
-                Scene scene = null;
+            public void handle(ActionEvent actionEvent) {
+                Parent fxml = null;
                 try {
-                    scene = new Scene(FXMLLoader.load(getClass().getResource("MoviePage.fxml")));
+                    fxml = FXMLLoader.load(getClass().getResource("Asilbek's_Version_MoviePage.fxml"));
                 } catch (IOException e) {
                     throw new RuntimeException(e);
                 }
-                dialogStage.setScene(scene);
-                dialogStage.show();
+                dashboardPane.getChildren().removeAll();
+                dashboardPane.getChildren().setAll(fxml);
 
             }
         });
 
-
-
-        vBox1.setSpacing(10);
-        vBox1.getChildren().add(button);
-        vBox1.getChildren().add(vBox);
-        vBox1.setStyle("-fx-padding: 5;");
        return vBox1;
     }
+   }
 
-//    private void Onclick(ActionEvent event)throws IOException  {
-//        Node node = (Node)event.getSource();
-//        Stage dialogStage = (Stage) node.getScene().getWindow();
-//        dialogStage.close();
-//        Scene scene = new Scene(FXMLLoader.load(getClass().getResource("MoviePage.fxml")));
-//        dialogStage.setScene(scene);
-//        dialogStage.show();
-
-
-    }
 
 
 

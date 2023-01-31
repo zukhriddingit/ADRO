@@ -11,7 +11,7 @@ import java.io.IOException;
 public class SignUpPageApplication extends Application {
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(SignUpPageApplication.class.getResource("SignUpPage.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 1536, 768);
+        Scene scene = new Scene(fxmlLoader.load(), 635, 645);
         stage.setTitle("Cinema Reservation System");
         stage.setScene(scene);
         stage.show();
