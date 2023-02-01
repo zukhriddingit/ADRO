@@ -121,7 +121,7 @@
                <children>
                   <VBox layoutX="25.0" layoutY="145.0" prefHeight="302.0" prefWidth="323.0">
                      <children>
-                        <Button fx:id="addMovieBtn1" mnemonicParsing="false" prefHeight="57.0" prefWidth="244.0" style="-fx-background-color: green;" text="ADD" textFill="WHITE">
+                        <Button fx:id="addMovieBtn1" mnemonicParsing="false" prefHeight="57.0" prefWidth="244.0" style="-fx-background-color: green;" text="ADD" textFill="WHITE" onAction="#addAction">
                            <font>
                               <Font size="28.0" />
                            </font>
@@ -132,7 +132,7 @@
                               <Insets bottom="30.0" />
                            </VBox.margin>
                         </Button>
-                        <Button fx:id="addMovieBtn11" mnemonicParsing="false" prefHeight="52.0" prefWidth="242.0" style="-fx-background-color: red;" text="DELETE" textFill="WHITE">
+                        <Button fx:id="deleteButton" mnemonicParsing="false" prefHeight="52.0" prefWidth="242.0" style="-fx-background-color: red;" text="DELETE" textFill="WHITE" onAction="#deleteAction">
                            <font>
                               <Font size="28.0" />
                            </font>
@@ -140,7 +140,7 @@
                               <Insets bottom="30.0" />
                            </VBox.margin>
                         </Button>
-                        <Button fx:id="addMovieBtn21" mnemonicParsing="false" prefHeight="57.0" prefWidth="241.0" style="-fx-background-color: blue;" text="EDIT" textFill="WHITE">
+                        <Button fx:id="editButton" mnemonicParsing="false" prefHeight="57.0" prefWidth="241.0" style="-fx-background-color: blue;" text="EDIT" textFill="WHITE" onAction="#editAction">
                            <font>
                               <Font size="28.0" />
                            </font>

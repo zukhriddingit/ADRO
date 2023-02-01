@@ -1,5 +1,6 @@
 package com.example.adro;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -29,10 +30,10 @@ public class AdminPanelController implements Initializable {
     private Button addMovieBtn1;
 
     @FXML
-    private Button addMovieBtn11;
+    private Button deleteButton;
 
     @FXML
-    private Button addMovieBtn21;
+    private Button editButton;
 
     @FXML
     private ComboBox<String> combo_genre;
@@ -75,5 +76,19 @@ public class AdminPanelController implements Initializable {
         combo_languages.getItems().addAll(languages);
         String[] sessions = {"10:00", "12:00", "15:00", "18:00", "21:00"};
         combo_session.getItems().addAll(sessions);
+    }
+
+
+    public void editAction(ActionEvent event) {
+
+    }
+
+    public void deleteAction(ActionEvent event) {
+
+    }
+
+    public void addAction(ActionEvent event) {
+        String sql = "INSERT INTO `movie` (`title`, `description`, `genre`, `language`, `duration`, `session`, `start_date`, `end_date`, `price`) VALUES ('"+movieTitle+"','"+movieDescription+"','"+combo_genre+"','"+combo_languages+"','"+movieDuration+"','"+combo_session+"','"+movieStartDate+"','"+movieEndDate+"','"+moviePrice+"')";
+
     }
 }
