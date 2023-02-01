@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: lightblue;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.adro.SignUpPage20">
+   <children>
+      <HBox prefHeight="600.0" prefWidth="800.0">
+         <children>
+            <VBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="600.0" prefWidth="437.0">
+               <children>
+                  <ImageView fitHeight="568.0" fitWidth="403.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="C:\Users\User\IdeaProjects\ADRO\src\main\java\pictures\black-panther-web.jpg" />
+                     </image>
+                  </ImageView>
+               </children></VBox>
+            <VBox alignment="TOP_CENTER" prefHeight="600.0" prefWidth="369.0">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="41.0" prefWidth="143.0" style="-fx-font-weight: bold;" text="Sing Up" textAlignment="CENTER">
+                     <font>
+                        <Font size="34.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="35.0" top="30.0" />
+                     </VBox.margin>
+                  </Label>
+                  <VBox alignment="TOP_CENTER" prefHeight="385.0" prefWidth="297.0" style="-fx-background-radius: 20px; -fx-background-color: orange;">
+                     <children>
+                        <Label prefHeight="26.0" prefWidth="241.0" text="NAME">
+                           <font>
+                              <Font name="Calibri" size="15.0" />
+                           </font>
+                        </Label>
+                        <TextField prefHeight="34.0" prefWidth="346.0" promptText="Full Name..." style="-fx-background-color: #D3D3D3; -fx-border-color: none; -fx-prompt-text-fill: grey; -fx-font-weight: bold;">
+                           <VBox.margin>
+                              <Insets bottom="20.0" left="30.0" right="30.0" />
+                           </VBox.margin>
+                        </TextField>
+                        <Label layoutX="40.0" layoutY="10.0" prefHeight="26.0" prefWidth="238.0" text="EMAIL ">
+                           <font>
+                              <Font name="Calibri" size="15.0" />
+                           </font>
+                        </Label>
+                        <TextField prefHeight="34.0" prefWidth="346.0" promptText="Email address..." style="-fx-background-color: #D3D3D3; -fx-border-color: none; -fx-prompt-text-fill: grey; -fx-font-weight: bold;">
+                           <VBox.margin>
+                              <Insets bottom="20.0" left="30.0" right="30.0" />
+                           </VBox.margin>
+                        </TextField>
+                        <Label layoutX="40.0" layoutY="111.0" prefHeight="26.0" prefWidth="238.0" text="Phone">
+                           <font>
+                              <Font name="Calibri" size="15.0" />
+                           </font>
+                        </Label>
+                        <TextField layoutX="40.0" layoutY="137.0" prefHeight="34.0" prefWidth="346.0" promptText="Phone number..." style="-fx-background-color: #D3D3D3; -fx-border-color: none; -fx-prompt-text-fill: grey; -fx-font-weight: bold;">
+                           <VBox.margin>
+                              <Insets bottom="20.0" left="30.0" right="30.0" />
+                           </VBox.margin>
+                        </TextField>
+                        <Label layoutX="40.0" layoutY="192.0" prefHeight="26.0" prefWidth="238.0" text="Date of Birth">
+                           <font>
+                              <Font name="Calibri" size="15.0" />
+                           </font>
+                        </Label>
+                        <DatePicker prefHeight="26.0" prefWidth="238.0" promptText="Date of birth..." />
+                     </children>
+                     <VBox.margin>
+                        <Insets left="35.0" right="35.0" />
+                     </VBox.margin>
+                     <padding>
+                        <Insets top="20.0" />
+                     </padding>
+                  </VBox>
+               </children>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>
