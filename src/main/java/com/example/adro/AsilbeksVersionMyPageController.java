@@ -3,6 +3,7 @@ package com.example.adro;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
@@ -20,27 +21,25 @@ public class AsilbeksVersionMyPageController implements Initializable{
 
 
     @FXML
-    private AnchorPane moviepage;
+
+    private Label MovieDicription;
 
     @FXML
-    private AnchorPane movieImage;
+    private Label MovieName;
 
+    @FXML
+    private ImageView MoviePageImg;
+
+    @FXML
+    private AnchorPane moviepage;
 
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        File file = new File("src/main/java/pictures");
-        ImageView imageView = new ImageView();
-        try {
-            Image image = new Image(file.toURI().toURL().toString()+"movie_1.jpeg");
-            imageView.setImage(image);
-        } catch (MalformedURLException e) {
-            throw new RuntimeException(e);
-        }
-        Pane container = new Pane();
-        container.getChildren().add(imageView);
-        container.setPadding(new Insets(10));
-        movieImage.getChildren().add(container);
+
+
+
+
 
 
 
