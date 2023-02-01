@@ -1,0 +1,17 @@
+.anchorpane{
+    -fx-background-color:#323030;
+
+}
+.pane{
+    -fx-background-color:#1c4094;
+    -fx-background-radius:50 0 0 50;
+}
+.btn{
+    -fx-background-color:#f27500;
+    -fx-cursor: hand;
+}
+
+.btn:hover{
+    -fx-background-color:#e8651a;
+
+}

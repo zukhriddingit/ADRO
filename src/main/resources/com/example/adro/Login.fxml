@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="600.0" prefWidth="966.0" styleClass="anchorpane" stylesheets="@Login.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Pane layoutX="92.0" layoutY="108.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="384.0" prefWidth="617.0" stylesheets="@Login.css" AnchorPane.bottomAnchor="108.0" AnchorPane.leftAnchor="374.0" AnchorPane.rightAnchor="374.0" AnchorPane.topAnchor="108.0">
+         <children>
+            <HBox layoutX="2.0" layoutY="-1.0" prefHeight="484.0" prefWidth="617.0">
+               <children>
+                  <Pane prefHeight="463.0" prefWidth="411.0" styleClass="pane" stylesheets="@Login.css">
+                     <children>
+                        <TextField alignment="CENTER" layoutX="50.0" layoutY="275.0" prefHeight="25.0" prefWidth="192.0" promptText="Password" />
+                        <Label layoutX="102.0" layoutY="137.0" prefHeight="47.0" prefWidth="90.0" text="Login" textFill="WHITE">
+                           <font>
+                              <Font name="Berlin Sans FB Demi Bold" size="29.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="username" alignment="CENTER" layoutX="50.0" layoutY="217.0" prefHeight="25.0" prefWidth="192.0" promptText="User name" />
+                        <Button layoutX="117.0" layoutY="379.0" mnemonicParsing="false" onAction="#signInButton" prefHeight="25.0" prefWidth="59.0" styleClass="btn" stylesheets="@Login.css" text="Enter" textFill="#f2f2f2" />
+                     </children></Pane>
+                  <ImageView fitHeight="484.0" fitWidth="400.0" pickOnBounds="true" preserveRatio="true" styleClass="imageview">
+                     <image>
+                        <Image url="C:\Users\Rudy\IdeaProjects\ADRO\src\main\java\pictures\loginImage.jpg" />
+                     </image></ImageView>
+               </children>
+            </HBox>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

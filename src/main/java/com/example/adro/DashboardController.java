@@ -155,7 +155,7 @@ public class DashboardController implements Initializable {
         button.setGraphic(imageView);
         button.setStyle("-fx-background-color: transparent;"+"-fx-cursor:hand;");
         button.setId(movieID);
-  //      button.setOnMouseClicked(mouseEvent -> method(stage,movieID));
+    //    button.setOnMouseClicked(mouseEvent -> method(stage,movieID));
 
 
 
@@ -191,7 +191,7 @@ public class DashboardController implements Initializable {
 //            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Asilbek's_Version_MoviePage.fxml"));
 //            Scene scene = null;
 //            try {
-//                scene = new Scene(fxmlLoader.load(), 500, 400);
+//                scene = new Scene(fxmlLoader.load(), 500, 500);
 //                stage.setScene(scene);
 //                stage.show();
 //            } catch (IOException e) {
