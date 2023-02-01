@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
-
+<?import javafx.scene.text.Font?>
 
 <AnchorPane fx:id="moviepage" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="535.0" prefWidth="949.0" style="-fx-background-color: #323030;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.adro.AsilbeksVersionMyPageController">
    <children>
@@ -11,7 +14,20 @@
             <AnchorPane prefHeight="83.0" prefWidth="949.0" BorderPane.alignment="CENTER" />
          </top>
          <center>
-            <AnchorPane fx:id="movieImage" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <ImageView fx:id="MoviePageImg" fitHeight="229.0" fitWidth="200.0" layoutX="14.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="C:\Users\Rudy\IdeaProjects\ADRO\src\main\java\pictures\movie_1.jpeg" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="MovieName" alignment="CENTER" layoutX="293.0" layoutY="15.0" prefHeight="51.0" prefWidth="239.0" text="To Gun " textFill="WHITE">
+                     <font>
+                        <Font name="Bodoni MT Black" size="26.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="MovieDicription" layoutX="230.0" layoutY="74.0" prefHeight="182.0" prefWidth="365.0" text="Label" />
+               </children></AnchorPane>
          </center>
       </BorderPane>
    </children>

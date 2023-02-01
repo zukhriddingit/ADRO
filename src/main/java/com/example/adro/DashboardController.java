@@ -23,10 +23,15 @@ import java.io.File;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.ResourceBundle;
 
 public class DashboardController implements Initializable {
 
+        ArrayList<String> words= new ArrayList<>(Arrays.asList("Puss in Boots","Avatar II ","High Heat","Violent Night",
+                "Troll","Wakanda Forever","Detective Knight","The Woman King","All Quiet on the Western Front",
+                "TOP GUN","Matrix","Interstellar","Inception","The Dark Knight","LUCY","WEDNESDAY","Forrest Gump","Nope"));
     @FXML
     private ScrollPane scrollPane_NewMovies;
 
@@ -44,7 +49,7 @@ public class DashboardController implements Initializable {
 
     @FXML
     private Button returnButton;
-
+    Stage stage = new Stage();
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
         returnButton.setOnAction(new EventHandler<ActionEvent>() {
@@ -76,6 +81,20 @@ public class DashboardController implements Initializable {
             }
         });
 
+        cartButton.setOnAction(new EventHandler<ActionEvent>() {
+
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                Parent fxml = null;
+                try {
+                    fxml= FXMLLoader.load(getClass().getResource("CartPage.fxml"));
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+                dashboardPane.getChildren().removeAll();
+                dashboardPane.getChildren().setAll(fxml);
+            }
+        });
 
         File file = new File("src/main/java/pictures");
         HBox hBox = new HBox(); // for scrollpane
@@ -126,6 +145,8 @@ public class DashboardController implements Initializable {
         imageView.setFitWidth(150);
         imageView.setId(imageID);
 
+
+
         // For 1 vertical column
         VBox vBox1=new VBox();
         Button button = new Button();
@@ -133,6 +154,10 @@ public class DashboardController implements Initializable {
         button.setMaxHeight(210);
         button.setGraphic(imageView);
         button.setStyle("-fx-background-color: transparent;"+"-fx-cursor:hand;");
+        button.setId(movieID);
+  //      button.setOnMouseClicked(mouseEvent -> method(stage,movieID));
+
+
 
         Label label = new Label(movieName);
         label.setStyle("-fx-text-fill:white;" + "-fx-font-weight: 700;");
@@ -162,6 +187,18 @@ public class DashboardController implements Initializable {
 
        return vBox1;
     }
+//        public void method(Stage stage,String id){
+//            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Asilbek's_Version_MoviePage.fxml"));
+//            Scene scene = null;
+//            try {
+//                scene = new Scene(fxmlLoader.load(), 500, 400);
+//                stage.setScene(scene);
+//                stage.show();
+//            } catch (IOException e) {
+//                throw new RuntimeException(e);
+//            }
+//        }
+
    }
 
 

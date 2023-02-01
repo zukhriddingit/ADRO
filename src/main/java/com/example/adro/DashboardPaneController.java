@@ -108,7 +108,7 @@ public class DashboardPaneController implements Initializable {
             public void handle(ActionEvent actionEvent) {
                 Parent fxml;
                 try {
-                    fxml = FXMLLoader.load(getClass().getResource("AsilbeksVersionMoviePage.fxml"));
+                    fxml = FXMLLoader.load(getClass().getResource("Asilbek's_Version_MoviePage.fxml"));
                 } catch (IOException e) {
                     throw new RuntimeException(e);
                 }
