@@ -35,15 +35,15 @@
                 <TableView fx:id="table" prefHeight="638.0" prefWidth="961.0" style="-fx-background-color: #7E909A;" BorderPane.alignment="CENTER">
                     <columns>
                         <TableColumn fx:id="MovieTitle" prefWidth="146.0" style="-fx-font-size: 15px;" text="Movie Title" />
-                        <TableColumn prefWidth="137.5999755859375" style="-fx-font-size: 15px;" text="Description" />
-                        <TableColumn prefWidth="104.0" style="-fx-font-size: 15px;" text="Genre" />
-                        <TableColumn fx:id="NumberOfTickets" prefWidth="92.00003051757812" style="-fx-font-size: 15px;" text="Language" />
-                  <TableColumn fx:id="NumberOfTickets1" prefWidth="100.0" style="-fx-font-size: 15px;" text="Duration" />
-                  <TableColumn prefWidth="70.4000244140625" style="-fx-font-size: 15px;" text="Session" />
-                  <TableColumn prefWidth="70.4000244140625" style="-fx-font-size: 15px;" text="S-Date" />
-                  <TableColumn prefWidth="70.4000244140625" style="-fx-font-size: 15px;" text="E-Date" />
-                  <TableColumn prefWidth="70.4000244140625" style="-fx-font-size: 15px;" text="Tickets" />
-                        <TableColumn prefWidth="83.20001220703125" style="-fx-font-size: 15px;" text="Price" />
+                        <TableColumn fx:id="MovieDescription" prefWidth="137.5999755859375" style="-fx-font-size: 15px;" text="Description" />
+                        <TableColumn fx:id="Genre" prefWidth="104.0" style="-fx-font-size: 15px;" text="Genre" />
+                        <TableColumn fx:id="Lang" prefWidth="92.00003051757812" style="-fx-font-size: 15px;" text="Language" />
+                  <TableColumn fx:id="Duration" prefWidth="100.0" style="-fx-font-size: 15px;" text="Duration" />
+                  <TableColumn fx:id="Session" prefWidth="70.4000244140625" style="-fx-font-size: 15px;" text="Session" />
+                  <TableColumn fx:id="StartDate" prefWidth="70.4000244140625" style="-fx-font-size: 15px;" text="S-Date" />
+                  <TableColumn fx:id="EndDate" prefWidth="70.4000244140625" style="-fx-font-size: 15px;" text="E-Date" />
+                  <TableColumn fx:id="NumberTickets" prefWidth="70.4000244140625" style="-fx-font-size: 15px;" text="Tickets" />
+                  <TableColumn fx:id="Price" prefWidth="83.20001220703125" style="-fx-font-size: 15px;" text="Price" />
                     </columns>
                <BorderPane.margin>
                   <Insets bottom="10.0" left="10.0" />
@@ -113,7 +113,7 @@
                               <Font size="18.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="movieDuration1" layoutX="10.0" layoutY="328.0" prefHeight="26.0" prefWidth="230.0" promptText="Number Of Tickets...">
+                        <TextField fx:id="numberTickets" layoutX="10.0" layoutY="328.0" prefHeight="26.0" prefWidth="230.0" promptText="Number Of Tickets...">
                            <VBox.margin>
                               <Insets bottom="10.0" />
                            </VBox.margin>

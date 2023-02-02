@@ -1,6 +1,5 @@
 package com.example.adro;
 
-import com.dlsc.formsfx.model.structure.IntegerField;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -18,9 +17,12 @@ import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.net.URL;
 import java.sql.*;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class AdminPanelController implements Initializable {
+    @FXML
+    private TableView<AdminMovie> tableAdmin;
 
     @FXML
     private TableColumn<AdminMovie, String> MovieTitle;
@@ -35,19 +37,22 @@ public class AdminPanelController implements Initializable {
     private TableColumn<AdminMovie,String> Lang;
 
     @FXML
-    private TableColumn<AdminMovie,Integer> Duration;
+    private TableColumn<AdminMovie,String> Duration;
+
+    @FXML
+    private TableColumn<AdminMovie,String> NumberTickets;
 
     @FXML
     private TableColumn<AdminMovie,String> Session;
 
     @FXML
-    private TableColumn<AdminMovie,Date> StartDate;
+    private TableColumn<AdminMovie,String> StartDate;
 
     @FXML
-    private TableColumn<AdminMovie, Date> EndDate;
+    private TableColumn<AdminMovie, String> EndDate;
 
     @FXML
-    private TableColumn<AdminMovie,Integer> Price;
+    private TableColumn<AdminMovie,String> Price;
     @FXML
     private Button addMovieBtn1;
 
@@ -73,6 +78,9 @@ public class AdminPanelController implements Initializable {
     private TextField movieDuration;
 
     @FXML
+    private TextField numberTickets;
+
+    @FXML
     private DatePicker movieEndDate;
 
     @FXML
@@ -84,8 +92,7 @@ public class AdminPanelController implements Initializable {
     @FXML
     private TextField movieTitle;
 
-    @FXML
-    private TableView<AdminMovie> tableAdmin;
+
 
     @FXML
     private Label welcomeText;
@@ -114,14 +121,15 @@ public class AdminPanelController implements Initializable {
     }
 
     public void deleteAction(ActionEvent event) {
-
+        loadData();
     }
 
     public void addAction(ActionEvent event) throws SQLException {
         DataBaseConnect dataCon = new DataBaseConnect();
-        if (isNumeric(movieDuration.getText())&&isNumeric(moviePrice.getText())){
-            String sql = "INSERT INTO `movies` (`title`, `description`, `genre`, `language`, `duration`, `session`, `start_date`, `end_date`, `price`) VALUES ('"+movieTitle.getText()+"','"+movieDescription.getText()+"','"+combo_genre.getValue()+"','"+combo_languages.getValue()+"','"+Integer.valueOf(movieDuration.getText())+"','"+combo_session.getValue()+"','"+movieStartDate.getValue()+"','"+movieEndDate.getValue()+"','"+Integer.valueOf(moviePrice.getText())+"')";
+        if (isNumeric(movieDuration.getText())&&isNumeric(moviePrice.getText())&&isNumeric(numberTickets.getText())){
+            String sql = "INSERT INTO `movies` (`title`, `description`, `genre`, `language`, `duration`, `number_tickets`, `session`, `start_date`, `end_date`, `price`) VALUES ('"+movieTitle.getText()+"','"+movieDescription.getText()+"','"+combo_genre.getValue()+"','"+combo_languages.getValue()+"','"+Integer.valueOf(movieDuration.getText())+"','"+Integer.valueOf(numberTickets.getText())+"','"+combo_session.getValue()+"','"+movieStartDate.getValue()+"','"+movieEndDate.getValue()+"','"+Integer.valueOf(moviePrice.getText())+"')";
             dataCon.insertData(sql);
+            loadData();
         }else System.out.println("Something went wrong");
     }
 
@@ -138,7 +146,7 @@ public class AdminPanelController implements Initializable {
     private void refreshable() throws SQLException {
         MovielistAdmin.clear();
 
-        query = "SELECT * FROM movies";
+        query = "SELECT * FROM `movies`";
         preparedStatement = connection.prepareStatement(query);
         resultSet = preparedStatement.executeQuery();
 
@@ -148,22 +156,27 @@ public class AdminPanelController implements Initializable {
                     resultSet.getString("description"),
                     resultSet.getString("genre"),
                     resultSet.getString("language"),
-                    resultSet.getString("session"),
                     resultSet.getInt("duration"),
-                    resultSet.getInt("price"),
+                    resultSet.getInt("number_tickets"),
+                    resultSet.getString("session"),
                     resultSet.getDate("start_date"),
-                    resultSet.getDate("end_date")
+                    resultSet.getDate("end_date"),
+                    resultSet.getInt("price")
                     ));
+//            AdminMovie result = new AdminMovie(resultSet.getString("title"),resultSet.getString("description"),resultSet.getString("genre"),resultSet.getString("language"),resultSet.getInt("duration"),resultSet.getInt("number_tickets"),resultSet.getString("session"),resultSet.getDate("start_date"),resultSet.getDate("end_date"),resultSet.getInt("price"));
+
+            System.out.println(resultSet.getString("title"));
             tableAdmin.setItems(MovielistAdmin);
         }
     }
 
-    private void loadDate() {
+    private void loadData() {
         connection = DataBaseConnect.getConnect();
         try {
             refreshable();
         } catch (SQLException e) {
             e.printStackTrace();
+            System.out.println("tralala");
         }
 
         MovieTitle.setCellValueFactory(new PropertyValueFactory<>("title"));
@@ -171,6 +184,7 @@ public class AdminPanelController implements Initializable {
         Genre.setCellValueFactory(new PropertyValueFactory<>("genre"));
         Lang.setCellValueFactory(new PropertyValueFactory<>("language"));
         Session.setCellValueFactory(new PropertyValueFactory<>("session"));
+        NumberTickets.setCellValueFactory(new PropertyValueFactory<>("numberTickets"));
         Duration.setCellValueFactory(new PropertyValueFactory<>("duration"));
         Price.setCellValueFactory(new PropertyValueFactory<>("price"));
         StartDate.setCellValueFactory(new PropertyValueFactory<>("startDate"));

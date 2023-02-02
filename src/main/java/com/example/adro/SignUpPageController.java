@@ -58,7 +58,7 @@ public class SignUpPageController {
         Node node = (Node)event.getSource();
         Stage dialogStage = (Stage) node.getScene().getWindow();
         dialogStage.close();
-        Scene scene = new Scene(FXMLLoader.load(getClass().getResource("SignIn.fxml")));
+        Scene scene = new Scene(FXMLLoader.load(getClass().getResource("Login.fxml")));
         dialogStage.setScene(scene);
         dialogStage.show();
     }
