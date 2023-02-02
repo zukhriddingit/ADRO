@@ -23,8 +23,10 @@
                            </font>
                         </Label>
                         <TextField fx:id="username" alignment="CENTER" layoutX="50.0" layoutY="217.0" prefHeight="25.0" prefWidth="192.0" promptText="User name" />
-                        <Button layoutX="117.0" layoutY="379.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="59.0" styleClass="btn" stylesheets="@Login.css" text="Enter" textFill="#f2f2f2" />
+                        <Button fx:id="enter" layoutX="117.0" layoutY="379.0" mnemonicParsing="false" onAction="#signInButton" prefHeight="25.0" prefWidth="59.0" styleClass="btn" stylesheets="@Login.css" text="Enter" textFill="#f2f2f2" />
                         <PasswordField fx:id="password" alignment="CENTER" layoutX="50.0" layoutY="277.0" prefHeight="25.0" prefWidth="192.0" promptText="Password" />
+                        <Label fx:id="label" layoutX="132.0" layoutY="320.0" styleClass="lab" stylesheets="@Login.css" textFill="WHITE" />
+                        <Button fx:id="register" layoutX="192.0" layoutY="379.0" mnemonicParsing="false" styleClass="btn-reg" stylesheets="@Login.css" text="Register" textFill="WHITE" />
                      </children>
                   </Pane>
                </children>

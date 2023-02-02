@@ -6,6 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
@@ -29,14 +30,16 @@ public class SignInController implements Initializable {
     private PasswordField password;
     @FXML
     private HBox hbox;
+    @FXML
+    private Label label;
 
 
     public void signInButton(ActionEvent event) throws IOException, SQLException {
         DataBaseConnect db = new DataBaseConnect();
         if (username.getText().isEmpty()){
-            System.out.println("error!");
+            label.setText("User Name is Empty!");
         } else if (password.getText().isEmpty()) {
-            System.out.println("error2!");
+           label.setText("Password is Empty!");
         } else if (db.checkPassword(username.getText(),password.getText())){
             Node node = (Node)event.getSource();
             Stage dialogStage = (Stage) node.getScene().getWindow();
@@ -45,7 +48,7 @@ public class SignInController implements Initializable {
             dialogStage.setScene(scene);
             dialogStage.show();
         } else {
-            System.out.println("another error!");
+            System.out.println("error!");
         }
 
     }
