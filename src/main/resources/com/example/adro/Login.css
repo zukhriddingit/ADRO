@@ -13,5 +13,18 @@
 
 .btn:hover{
     -fx-background-color:#e8651a;
+}
 
+.btn-reg{
+    -fx-background-color:transparent;
+    -fx-cursor:hand;
+}
+.btn-reg:hover{
+    -fx-text-fill:#e8651a;
+}
+.btn-reg:pressed{
+    -fx-text-fill:white;
+}
+.lab{
+    -fx-text-fill:red;
 }

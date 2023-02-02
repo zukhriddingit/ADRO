@@ -6,6 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
@@ -30,23 +31,27 @@ public class SignInController implements Initializable {
     @FXML
     private HBox hbox;
 
+    @FXML
+    private Label errorMg;
+
 
     public void signInButton(ActionEvent event) throws IOException, SQLException {
         DataBaseConnect db = new DataBaseConnect();
         if (username.getText().isEmpty()){
-            System.out.println("error!");
+            errorMg.setText("User Name is Empty!");
         } else if (password.getText().isEmpty()) {
-            System.out.println("error2!");
+            errorMg.setText("Entre the password!");
         } else if (db.checkPassword(username.getText(),password.getText())){
             Node node = (Node)event.getSource();
             Stage dialogStage = (Stage) node.getScene().getWindow();
             dialogStage.close();
-            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("AdminPanel.fxml")),1440,780);
+            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("AdminPanel.fxml")),1300,700);
             dialogStage.setScene(scene);
             dialogStage.show();
         } else {
-            System.out.println("another error!");
+            errorMg.setText("error!");
         }
+
 
     }
     @Override
@@ -56,7 +61,7 @@ public class SignInController implements Initializable {
         try {
             Image image = new Image(file.toURI().toURL().toString()+"photo_2023-02-02_16-57-58.jpg");
             imageView.setFitHeight(463);
-            imageView.setFitWidth(350);
+            imageView.setFitWidth(330);
             imageView.setImage(image);
             hbox.getChildren().add(imageView);
         } catch (MalformedURLException e) {
