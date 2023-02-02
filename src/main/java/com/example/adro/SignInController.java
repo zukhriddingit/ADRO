@@ -6,6 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -32,6 +33,12 @@ public class SignInController implements Initializable {
     private HBox hbox;
     @FXML
     private Label label;
+    @FXML
+    private ComboBox<String> comboBox;
+
+
+
+
 
 
     public void signInButton(ActionEvent event) throws IOException, SQLException {
@@ -48,7 +55,7 @@ public class SignInController implements Initializable {
             dialogStage.setScene(scene);
             dialogStage.show();
         } else {
-            System.out.println("error!");
+            label.setText("error!");
         }
 
     }
@@ -65,6 +72,9 @@ public class SignInController implements Initializable {
         } catch (MalformedURLException e) {
             throw new RuntimeException(e);
         }
+        String[] combo = {"ADROMAN", "Admin"};
+        comboBox.getItems().addAll(combo);
+
 
 
     }

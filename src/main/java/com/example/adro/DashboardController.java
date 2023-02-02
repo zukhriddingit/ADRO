@@ -28,10 +28,6 @@ import java.util.Arrays;
 import java.util.ResourceBundle;
 
 public class DashboardController implements Initializable {
-
-        ArrayList<String> words= new ArrayList<>(Arrays.asList("Puss in Boots","Avatar II ","High Heat","Violent Night",
-                "Troll","Wakanda Forever","Detective Knight","The Woman King","All Quiet on the Western Front",
-                "TOP GUN","Matrix","Interstellar","Inception","The Dark Knight","LUCY","WEDNESDAY","Forrest Gump","Nope"));
     @FXML
     private ScrollPane scrollPane_NewMovies;
 
@@ -49,7 +45,8 @@ public class DashboardController implements Initializable {
 
     @FXML
     private Button returnButton;
-    Stage stage = new Stage();
+
+
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
         returnButton.setOnAction(new EventHandler<ActionEvent>() {

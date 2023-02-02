@@ -27,4 +27,11 @@
 }
 .lab{
     -fx-text-fill:red;
+    -fx-font-weight:bold;
+}
+.combobox{
+    -fx-background-color:white;
+}
+.l{
+    -fx-background-color:white;
 }
