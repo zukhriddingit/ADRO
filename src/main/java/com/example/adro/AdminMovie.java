@@ -7,21 +7,25 @@ public class AdminMovie {
 
     private int duration;
 
+    private int numberTickets;
+
     private String session;
 
     private Date startDate, endDate;
 
     private int price;
-    public AdminMovie(String title, String description, String genre, String language, String session, int duration, int price, Date startDate, Date endDate) {
+
+    public AdminMovie(String title, String description, String genre, String language, int duration, int numberTickets, String session, Date startDate, Date endDate, int price) {
         this.title = title;
         this.description = description;
         this.genre = genre;
         this.language = language;
-        this.session = session;
         this.duration = duration;
-        this.price = price;
+        this.numberTickets = numberTickets;
+        this.session = session;
         this.startDate = startDate;
         this.endDate = endDate;
+        this.price = price;
     }
 
     public String getTitle() {
@@ -54,6 +58,14 @@ public class AdminMovie {
 
     public void setLanguage(String language) {
         this.language = language;
+    }
+
+    public int getNumberTickets() {
+        return numberTickets;
+    }
+
+    public void setNumberTickets(int numberTickets) {
+        this.numberTickets = numberTickets;
     }
 
     public String getSession() {

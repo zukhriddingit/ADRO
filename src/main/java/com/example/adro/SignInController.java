@@ -41,7 +41,7 @@ public class SignInController implements Initializable {
             Node node = (Node)event.getSource();
             Stage dialogStage = (Stage) node.getScene().getWindow();
             dialogStage.close();
-            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("AdminPanel.fxml")),1440,780);
+            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("AdminPanel.fxml")),1349,625);
             dialogStage.setScene(scene);
             dialogStage.show();
         } else {
