@@ -20,7 +20,7 @@
                <children>
                   <ImageView fitHeight="568.0" fitWidth="403.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="C:\Users\User\IdeaProjects\ADRO\src\main\java\pictures\black-panther-web.jpg" />
+                        <Image url="D:\java Praktikum\ADROFinal\src\main\java\pictures\black-panther-web.jpg" />
                      </image>
                   </ImageView>
                </children></VBox>
