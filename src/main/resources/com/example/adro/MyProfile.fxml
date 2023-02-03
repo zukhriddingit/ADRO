@@ -22,7 +22,7 @@
                     <children>
                         <VBox prefHeight="389.0" prefWidth="436.0">
                             <children>
-                                <ImageView fitHeight="230.0" fitWidth="177.0" pickOnBounds="true" preserveRatio="true">
+                                <ImageView fitHeight="207.0" fitWidth="202.0" pickOnBounds="true" preserveRatio="true">
                                     <image>
                                         <Image url="@../../../../java/pictures/bubfilo.jpg" />
                                     </image>
@@ -150,7 +150,7 @@
                         <Insets top="10.0" />
                     </VBox.margin>
                 </HBox>
-                <Button alignment="CENTER" contentDisplay="CENTER" minHeight="18.0" mnemonicParsing="false" prefHeight="184.0" prefWidth="388.0" style="-fx-background-color: #ebb074;" text="Edit">
+                <Button alignment="CENTER" contentDisplay="CENTER" minHeight="18.0" mnemonicParsing="false" prefHeight="149.0" prefWidth="290.0" style="-fx-background-color: #ebb074;" text="Edit">
                     <VBox.margin>
                         <Insets left="300.0" />
                     </VBox.margin>
