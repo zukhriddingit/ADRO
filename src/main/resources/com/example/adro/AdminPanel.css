@@ -1,0 +1,8 @@
+.flex-buttons{
+    -fx-display: flex;
+    -fx-justify-content: space-between;
+}
+
+.admin-form *{
+    -fx-margin: 0 0 30 0;
+}
