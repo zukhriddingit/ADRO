@@ -6,6 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -32,23 +33,31 @@ public class SignInController implements Initializable {
     private HBox hbox;
     @FXML
     private Label label;
+    @FXML
+    private ComboBox<String> comboBox;
+
+
+
+
 
 
     public void signInButton(ActionEvent event) throws IOException, SQLException {
         DataBaseConnect db = new DataBaseConnect();
+        String tableName=(comboBox.getValue().equals("ADROMAN"))?"register":"admin";
+        String pageName=(comboBox.getValue().equals("ADROMAN"))?"Dashboard":"AdminPanel";
         if (username.getText().isEmpty()){
             label.setText("User Name is Empty!");
         } else if (password.getText().isEmpty()) {
            label.setText("Password is Empty!");
-        } else if (db.checkPassword(username.getText(),password.getText())){
+        } else if (db.checkPassword(username.getText(),password.getText(),tableName)){
             Node node = (Node)event.getSource();
             Stage dialogStage = (Stage) node.getScene().getWindow();
             dialogStage.close();
-            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("AdminPanel.fxml")),1440,780);
+            Scene scene = new Scene(FXMLLoader.load(getClass().getResource(pageName+".fxml")),1366,700);
             dialogStage.setScene(scene);
             dialogStage.show();
         } else {
-            System.out.println("error!");
+            label.setText("error!");
         }
 
     }
@@ -65,6 +74,9 @@ public class SignInController implements Initializable {
         } catch (MalformedURLException e) {
             throw new RuntimeException(e);
         }
+        String[] combo = {"ADROMAN", "ADMIN"};
+        comboBox.getItems().addAll(combo);
+        comboBox.setValue("ADROMAN");
 
 
     }
