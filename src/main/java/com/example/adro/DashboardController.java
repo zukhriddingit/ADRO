@@ -180,7 +180,8 @@ public class DashboardController implements Initializable {
     }
 
     private String imageUrl(String resourcePath) {
-        return Objects.requireNonNull(getClass().getResource(resourcePath)).toExternalForm();
+        return Objects.requireNonNull(getClass().getResource(resourcePath), "Missing resource: " + resourcePath)
+                .toExternalForm();
     }
 //        public void method(Stage stage,String id){
 //            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Asilbek's_Version_MoviePage.fxml"));
@@ -195,5 +196,4 @@ public class DashboardController implements Initializable {
 //        }
 
    }
-
 

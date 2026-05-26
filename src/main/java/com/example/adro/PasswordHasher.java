@@ -34,11 +34,15 @@ public final class PasswordHasher {
         if (parts.length != 4) {
             return false;
         }
-        int iterations = Integer.parseInt(parts[1]);
-        byte[] salt = Base64.getDecoder().decode(parts[2]);
-        byte[] expectedHash = Base64.getDecoder().decode(parts[3]);
-        byte[] actualHash = pbkdf2(password.toCharArray(), salt, iterations, expectedHash.length * 8);
-        return MessageDigest.isEqual(expectedHash, actualHash);
+        try {
+            int iterations = Integer.parseInt(parts[1]);
+            byte[] salt = Base64.getDecoder().decode(parts[2]);
+            byte[] expectedHash = Base64.getDecoder().decode(parts[3]);
+            byte[] actualHash = pbkdf2(password.toCharArray(), salt, iterations, expectedHash.length * 8);
+            return MessageDigest.isEqual(expectedHash, actualHash);
+        } catch (IllegalArgumentException ex) {
+            return false;
+        }
     }
 
     public static boolean isHashed(String storedValue) {

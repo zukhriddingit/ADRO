@@ -3,6 +3,7 @@ package com.example.adro;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class PasswordHasherTest {
@@ -20,7 +21,7 @@ class PasswordHasherTest {
         String first = PasswordHasher.hash("secret123");
         String second = PasswordHasher.hash("secret123");
 
-        assertFalse(first.equals(second));
+        assertNotEquals(first, second);
     }
 
     @Test

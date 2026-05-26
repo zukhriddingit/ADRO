@@ -88,6 +88,7 @@ public class SignUpPageController implements Initializable {
     }
 
     private String imageUrl(String resourcePath) {
-        return Objects.requireNonNull(getClass().getResource(resourcePath)).toExternalForm();
+        return Objects.requireNonNull(getClass().getResource(resourcePath), "Missing resource: " + resourcePath)
+                .toExternalForm();
     }
 }
