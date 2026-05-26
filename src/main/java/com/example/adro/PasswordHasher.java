@@ -51,7 +51,7 @@ public final class PasswordHasher {
             SecretKeyFactory factory = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA256");
             return factory.generateSecret(spec).getEncoded();
         } catch (InvalidKeySpecException | java.security.NoSuchAlgorithmException ex) {
-            throw new IllegalStateException("Password hashing failed", ex);
+            throw new IllegalStateException("Password hashing failed using PBKDF2WithHmacSHA256", ex);
         } finally {
             spec.clearPassword();
         }

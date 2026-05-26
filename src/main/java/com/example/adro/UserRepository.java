@@ -10,9 +10,8 @@ import java.util.Optional;
 
 public class UserRepository {
     public boolean usernameExists(String username, UserTable table) throws SQLException {
-        String sql = "SELECT 1 FROM " + table.tableName() + " WHERE username = ?";
         try (Connection connection = DataBaseConnect.getConnect();
-             PreparedStatement statement = connection.prepareStatement(sql)) {
+             PreparedStatement statement = connection.prepareStatement(usernameExistsSql(table))) {
             statement.setString(1, username);
             try (ResultSet resultSet = statement.executeQuery()) {
                 return resultSet.next();
@@ -21,9 +20,8 @@ public class UserRepository {
     }
 
     public Optional<String> findPassword(String username, UserTable table) throws SQLException {
-        String sql = "SELECT password FROM " + table.tableName() + " WHERE username = ?";
         try (Connection connection = DataBaseConnect.getConnect();
-             PreparedStatement statement = connection.prepareStatement(sql)) {
+             PreparedStatement statement = connection.prepareStatement(passwordLookupSql(table))) {
             statement.setString(1, username);
             try (ResultSet resultSet = statement.executeQuery()) {
                 if (resultSet.next()) {
@@ -51,5 +49,19 @@ public class UserRepository {
             }
             statement.executeUpdate();
         }
+    }
+
+    private String usernameExistsSql(UserTable table) {
+        return switch (table) {
+            case REGISTER -> "SELECT 1 FROM register WHERE username = ?";
+            case ADMIN -> "SELECT 1 FROM admin WHERE username = ?";
+        };
+    }
+
+    private String passwordLookupSql(UserTable table) {
+        return switch (table) {
+            case REGISTER -> "SELECT password FROM register WHERE username = ?";
+            case ADMIN -> "SELECT password FROM admin WHERE username = ?";
+        };
     }
 }
