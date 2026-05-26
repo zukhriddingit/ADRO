@@ -16,8 +16,8 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.net.URL;
-import java.sql.*;
-import java.util.List;
+import java.sql.Date;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 public class AdminPanelController implements Initializable {
@@ -98,11 +98,7 @@ public class AdminPanelController implements Initializable {
     private Label welcomeText;
 
     // for database and table
-    String query = null;
-    Connection connection = null;
-    PreparedStatement preparedStatement = null;
-    ResultSet resultSet = null;
-    Movie movie = null;
+    private final MovieRepository movieRepository = new MovieRepository();
     ObservableList<AdminMovie> MovielistAdmin = FXCollections.observableArrayList();
 
     @Override
@@ -125,10 +121,20 @@ public class AdminPanelController implements Initializable {
     }
 
     public void addAction(ActionEvent event) throws SQLException {
-        DataBaseConnect dataCon = new DataBaseConnect();
         if (isNumeric(movieDuration.getText())&&isNumeric(moviePrice.getText())&&isNumeric(numberTickets.getText())){
-            String sql = "INSERT INTO `movies` (`title`, `description`, `genre`, `language`, `duration`, `number_tickets`, `session`, `start_date`, `end_date`, `price`) VALUES ('"+movieTitle.getText()+"','"+movieDescription.getText()+"','"+combo_genre.getValue()+"','"+combo_languages.getValue()+"','"+Integer.valueOf(movieDuration.getText())+"','"+Integer.valueOf(numberTickets.getText())+"','"+combo_session.getValue()+"','"+movieStartDate.getValue()+"','"+movieEndDate.getValue()+"','"+Integer.valueOf(moviePrice.getText())+"')";
-            dataCon.insertData(sql);
+            AdminMovie movie = new AdminMovie(
+                    movieTitle.getText(),
+                    movieDescription.getText(),
+                    combo_genre.getValue(),
+                    combo_languages.getValue(),
+                    Integer.parseInt(movieDuration.getText()),
+                    Integer.parseInt(numberTickets.getText()),
+                    combo_session.getValue(),
+                    movieStartDate.getValue() == null ? null : Date.valueOf(movieStartDate.getValue()),
+                    movieEndDate.getValue() == null ? null : Date.valueOf(movieEndDate.getValue()),
+                    Integer.parseInt(moviePrice.getText())
+            );
+            movieRepository.addMovie(movie);
             loadData();
         }else System.out.println("Something went wrong");
     }
@@ -145,33 +151,11 @@ public class AdminPanelController implements Initializable {
     // for Table
     private void refreshable() throws SQLException {
         MovielistAdmin.clear();
-
-        query = "SELECT * FROM `movies`";
-        preparedStatement = connection.prepareStatement(query);
-        resultSet = preparedStatement.executeQuery();
-
-        while (resultSet.next()){
-            MovielistAdmin.add(new AdminMovie(
-                    resultSet.getString("title"),
-                    resultSet.getString("description"),
-                    resultSet.getString("genre"),
-                    resultSet.getString("language"),
-                    resultSet.getInt("duration"),
-                    resultSet.getInt("number_tickets"),
-                    resultSet.getString("session"),
-                    resultSet.getDate("start_date"),
-                    resultSet.getDate("end_date"),
-                    resultSet.getInt("price")
-                    ));
-//            AdminMovie result = new AdminMovie(resultSet.getString("title"),resultSet.getString("description"),resultSet.getString("genre"),resultSet.getString("language"),resultSet.getInt("duration"),resultSet.getInt("number_tickets"),resultSet.getString("session"),resultSet.getDate("start_date"),resultSet.getDate("end_date"),resultSet.getInt("price"));
-
-            System.out.println(resultSet.getString("title"));
-            tableAdmin.setItems(MovielistAdmin);
-        }
+        MovielistAdmin.addAll(movieRepository.fetchMovies());
+        tableAdmin.setItems(MovielistAdmin);
     }
 
     private void loadData() {
-        connection = DataBaseConnect.getConnect();
         try {
             refreshable();
         } catch (SQLException e) {

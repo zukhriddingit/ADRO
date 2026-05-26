@@ -18,7 +18,7 @@
                <children>
                   <ImageView fx:id="MoviePageImg" fitHeight="229.0" fitWidth="200.0" layoutX="14.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="C:\Users\Rudy\IdeaProjects\ADRO\src\main\java\pictures\movie_1.jpeg" />
+                        <Image url="@/pictures/movie_1.jpeg" />
                      </image>
                   </ImageView>
                   <Label fx:id="MovieName" alignment="CENTER" layoutX="293.0" layoutY="15.0" prefHeight="51.0" prefWidth="239.0" text="To Gun " textFill="WHITE">

@@ -10,11 +10,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.net.URL;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.Date;
 import java.util.ResourceBundle;
 
 public class CartPageController implements Initializable {
@@ -43,37 +39,16 @@ public class CartPageController implements Initializable {
         loadDate();
     }
 
-    String query = null;
-    Connection connection = null;
-    PreparedStatement preparedStatement = null;
-    ResultSet resultSet = null;
-    Movie movie = null;
-
+    private final CartRepository cartRepository = new CartRepository();
     ObservableList<Movie> Movielist = FXCollections.observableArrayList();
 
     private void refreshable() throws SQLException {
         Movielist.clear();
-
-        query = "SELECT * FROM cart";
-        preparedStatement = connection.prepareStatement(query);
-        resultSet = preparedStatement.executeQuery();
-
-        while (resultSet.next()){
-            Movielist.add(new Movie(
-                    resultSet.getString("Movie_name"),
-                    resultSet.getString("Movie_theatre"),
-                    resultSet.getString("Movie_id"),
-                    resultSet.getString("Language"),
-                    resultSet.getDate("Movie_time"),
-                    resultSet.getInt("Tickets_num"),
-                    resultSet.getString("Price")
-            ));
-            movieTable.setItems(Movielist);
-        }
+        Movielist.addAll(cartRepository.fetchCartMovies());
+        movieTable.setItems(Movielist);
     }
 
     private void loadDate() {
-        connection = DataBaseConnect.getConnect();
         try {
             refreshable();
         } catch (SQLException e) {

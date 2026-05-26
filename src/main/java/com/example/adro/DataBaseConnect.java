@@ -1,55 +1,40 @@
 package com.example.adro;
-import java.sql.*;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-
 public class DataBaseConnect {
-    private static String HOST = "127.0.0.1";
-    private static int PORT = 3306;
-    private static String DB_NAME = "adro";
-    private static String USERNAME = "root";
-    private static String PASSWORD = "";
-    private static Connection connection;
+    private static final Logger LOGGER = Logger.getLogger(DataBaseConnect.class.getName());
+    private static final String DEFAULT_HOST = "127.0.0.1";
+    private static final String DEFAULT_PORT = "3306";
+    private static final String DEFAULT_DB_NAME = "adro";
+    private static final String DEFAULT_USERNAME = "root";
+    private static final String DEFAULT_PASSWORD = "";
 
-    public static Connection getConnect (){
+    public static Connection getConnect() {
+        String host = getEnv("ADRO_DB_HOST", DEFAULT_HOST);
+        String port = getEnv("ADRO_DB_PORT", DEFAULT_PORT);
+        String dbName = getEnv("ADRO_DB_NAME", DEFAULT_DB_NAME);
+        String username = getEnv("ADRO_DB_USERNAME", DEFAULT_USERNAME);
+        String password = getEnv("ADRO_DB_PASSWORD", DEFAULT_PASSWORD);
+        String url = String.format("jdbc:mysql://%s:%s/%s", host, port, dbName);
+
         try {
-            connection = DriverManager.getConnection(String.format("jdbc:mysql://%s:%d/%s", HOST,PORT,DB_NAME),USERNAME,PASSWORD);
+            return DriverManager.getConnection(url, username, password);
         } catch (SQLException ex) {
-            Logger.getLogger(DataBaseConnect.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
-        return  connection;
-    }
-
-    public static void insertData(String sql) throws SQLException {
-        Statement statement = getConnect().createStatement();
-        if (statement.executeUpdate(sql)>0){
-            System.out.println("Successfully added!");
-        }else{
-            System.out.println("Something went wrong!!!");
+            LOGGER.log(Level.SEVERE, "Failed to connect to database", ex);
+            throw new IllegalStateException("Unable to connect to database", ex);
         }
     }
 
-    public static boolean getInfo(String username) throws SQLException {
-        PreparedStatement preparedStatement = getConnect().prepareStatement("select * from register where username = ?");
-        preparedStatement.setString(1,username);
-        ResultSet r1 = preparedStatement.executeQuery();
-        if (r1.next()){
-            return true;
+    private static String getEnv(String name, String fallback) {
+        String value = System.getenv(name);
+        if (value == null || value.isBlank()) {
+            return fallback;
         }
-        else return false;
+        return value;
     }
-
-    public static boolean checkPassword(String username,String password) throws SQLException {
-        PreparedStatement preparedStatement = getConnect().prepareStatement("SELECT password FROM `register` WHERE BINARY username=? AND BINARY  password=?;");
-        preparedStatement.setString(1,username);
-        preparedStatement.setString(2,password);
-        ResultSet r = preparedStatement.executeQuery();
-        if (r.next()){
-            return true;
-        }
-        return false;
-    }
-
 }

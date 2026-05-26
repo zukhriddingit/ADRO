@@ -17,7 +17,7 @@
     </padding>
    <ImageView fitHeight="174.0" fitWidth="170.0" pickOnBounds="true" preserveRatio="true">
       <image>
-         <Image url="file:/D:/java%20Praktikum/ADROFinal/src/main/java/pictures/adro-removebg-preview.png" />
+         <Image url="@/pictures/adro-removebg-preview.png" />
       </image>
    </ImageView>
 

@@ -15,11 +15,10 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 
-import java.io.File;
 import java.io.IOException;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.sql.SQLException;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
 
@@ -42,14 +41,14 @@ public class SignInController implements Initializable {
 
 
     public void signInButton(ActionEvent event) throws IOException, SQLException {
-        DataBaseConnect db = new DataBaseConnect();
-        String tableName=(comboBox.getValue().equals("ADROMAN"))?"register":"admin";
-        String pageName=(comboBox.getValue().equals("ADROMAN"))?"Dashboard":"AdminPanel";
+        AuthService authService = new AuthService();
+        UserTable table = UserTable.fromSelection(comboBox.getValue());
+        String pageName = (table == UserTable.REGISTER) ? "Dashboard" : "AdminPanel";
         if (username.getText().isEmpty()){
             label.setText("User Name is Empty!");
         } else if (password.getText().isEmpty()) {
            label.setText("Password is Empty!");
-        } else if (db.checkPassword(username.getText(),password.getText(),tableName)){
+        } else if (authService.authenticate(username.getText(), password.getText(), table)){
             Node node = (Node)event.getSource();
             Stage dialogStage = (Stage) node.getScene().getWindow();
             dialogStage.close();
@@ -63,21 +62,20 @@ public class SignInController implements Initializable {
     }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        File file = new File("src/main/java/pictures");
         ImageView imageView =new ImageView();
-        try {
-            Image image = new Image(file.toURI().toURL().toString()+"photo_2023-02-02_16-57-58.jpg");
-            imageView.setFitHeight(463);
-            imageView.setFitWidth(350);
-            imageView.setImage(image);
-            hbox.getChildren().add(imageView);
-        } catch (MalformedURLException e) {
-            throw new RuntimeException(e);
-        }
+        Image image = new Image(imageUrl("/pictures/photo_2023-02-02_16-57-58.jpg"));
+        imageView.setFitHeight(463);
+        imageView.setFitWidth(350);
+        imageView.setImage(image);
+        hbox.getChildren().add(imageView);
         String[] combo = {"ADROMAN", "ADMIN"};
         comboBox.getItems().addAll(combo);
         comboBox.setValue("ADROMAN");
 
 
+    }
+
+    private String imageUrl(String resourcePath) {
+        return Objects.requireNonNull(getClass().getResource(resourcePath)).toExternalForm();
     }
 }

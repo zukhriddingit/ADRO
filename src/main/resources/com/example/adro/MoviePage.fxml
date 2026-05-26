@@ -22,7 +22,7 @@
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
             <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="1485.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" style="-fx-color: red;">
                <image>
-                  <Image url="@../../../../java/pictures/user (1).png" />
+                  <Image url="@/pictures/user (1).png" />
                </image>
             </ImageView>
             <Text fx:id="userName" fill="#df7d7d" layoutX="1417.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ASILBEK">
@@ -33,7 +33,7 @@
             <Button layoutX="32.0" layoutY="12.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="66.0" style="-fx-background-color: transparent;" />
             <ImageView fitHeight="62.0" fitWidth="100.0" layoutX="52.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../java/pictures/adro-removebg-preview.png" />
+                  <Image url="@/pictures/adro-removebg-preview.png" />
                </image>
             </ImageView>
             <Pane layoutX="215.0" layoutY="23.0" prefHeight="30.0" prefWidth="267.0">
@@ -43,7 +43,7 @@
                      <graphic>
                         <ImageView fitHeight="23.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../../java/pictures/search.png" />
+                              <Image url="@/pictures/search.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -59,7 +59,7 @@
          <children>
             <ImageView fx:id="o" fitHeight="356.0" fitWidth="268.0" layoutX="30.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../java/pictures/eaa41b291611d7ae5b6b7e7f80a931465b516eeba5dfebefcdfe9fd67e3c83be._RI_V_TTW_.jpg" />
+                  <Image url="@/pictures/eaa41b291611d7ae5b6b7e7f80a931465b516eeba5dfebefcdfe9fd67e3c83be._RI_V_TTW_.jpg" />
                </image>
             </ImageView>
          </children>
@@ -146,7 +146,7 @@
       </Button>
       <ImageView fitHeight="53.0" fitWidth="60.0" layoutX="1102.0" layoutY="539.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../java/pictures/shopping-cart.png" />
+            <Image url="@/pictures/shopping-cart.png" />
          </image>
       </ImageView>
    </children>
